@@ -6,12 +6,12 @@ All informations are gathered during monitoring of serial communication between 
 * Communication on uart with baudrate 38400bps
 * Offset `0x0`: Every message starts with `0xAB` `0xCD` bytes (`0xCDAB`)
 * Offset `0x2`: Next comes two bytes with payload size.
-* Offset `0x4`: Payload of size defined at offset `0x2`. Payload is encoded using xor function described below
+* Offset `0x4`: Payload encoded using xor function described below.
 * Next comes checksum of payload, size=2 bytes
-* Every message ends with `0xDC` `0xBA` (`0xBADC`)
+* Finally every message ends with `0xDC` `0xBA` (`0xBADC`)
 
-# Payload decoding
 
+# Payload decoding/encoding
 Payload content is XOR-ed with 16 bytes long key:
 ```
 166c14e62e910d402135d5401303e980
