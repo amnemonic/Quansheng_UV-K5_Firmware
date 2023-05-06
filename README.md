@@ -20,4 +20,11 @@ baf142b6675f0f96f7c93c841b26e14e
 af30f42c77b27dbb3f29285722d6928b
 ```
 
-In decoded file at offset 8192 (0x2000) firmware version string can be found.
+In decoded file at offset 8192 (0x2000) firmware version string can be found. 
+
+To prepare firmware file for sending to device you have to do 3 steps:
+* decode file above xor key
+* cut 16 bytes at address 0x2000
+* cut two last bytes (checksum)
+
+
