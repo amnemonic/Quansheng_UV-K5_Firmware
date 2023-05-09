@@ -17,7 +17,7 @@ before encoding payload contains:
 * Command ID - 2 bytes little endian (for example 0x0514, 0x051B etc)
 * Command body length + 4 (2 bytes)
 * Command body (variable size, can be zero length too)
-* Command Trailer (4 bytes, ignored by device, applications sends unix timestamp)
+* Command Trailer (4 bytes, ignored by device, applications sends unix timestamp, in all my samples i use `0x9f` `0x4c` `0x55` `0x64` and it works)
 * CRC16 of above data (2 bytes)
 
 This can be show like this:<br>
@@ -67,7 +67,7 @@ def crc16_ccitt(data):
 ```
 
 
-# Examples
+# Command types
 ## Get firmware version
 command id = `0x0515`, command body length = `0`, reply id = `0x0514`
 ```python
@@ -99,4 +99,17 @@ CMD: 0x0515
 LEN: 0x0024
 VER: k5_2.01.23
 ```
+
+
+
+## Read configuration memory
+command id = `0x051B`, command body length = `4`, reply id = `0x051A`
+
+Device have 8kB of memory for configuration. It can be read using command `0x051B`. Format of payload (before encoding) is following:<br>
+| Command ID    | len(cmd_body)+4 |  Address (0 - 0x1FF)  |   Length      | dummy timestamp            |    CRC16      |
+|  :---:        |      :---:      |    :---:              |   :---:       | :----:                     |   :----:      |
+| `0x1B` `0x05` | `0x08` `0x00`   | `0x00` `0x00`         | `0x10` `0x00` | `0x9f` `0x4c` `0x55` `0x64`| `0xFF` `0xFF` |
+
+
+
 
