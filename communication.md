@@ -111,5 +111,8 @@ Device have 8kB of memory for configuration. It can be read using command `0x051
 | `0x1B` `0x05` | `0x08` `0x00`   | `0x00` `0x00`         | `0x10` `0x00` | `0x9f` `0x4c` `0x55` `0x64`| `0xFF` `0xFF` |
 
 
+Python code for dumping whole configuration memory can be found here: [dump_cfg.py](dump_cfg.py)
+
+Brief map of memory contents: [cfg_mem_map.md](cfg_mem_map.md)
 
 
