@@ -103,7 +103,7 @@ VER: k5_2.01.23
 
 
 ## Read configuration memory
-command id = `0x051B`, command body length = `4`, reply id = `0x051A`
+command id = `0x051B`, command body length = `4`, reply id = `0x051C`
 
 Device have 8kB of memory for configuration. It can be read using command `0x051B`. Format of payload (before encoding) is following:<br>
 | Command ID    | len(cmd_body)+4 |  Address (0 - 0x1FF)  |   Length      | dummy timestamp            |    CRC16      |
