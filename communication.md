@@ -102,7 +102,7 @@ VER: k5_2.01.23
 
 
 
-## Read configuration memory
+## Read configuration memory (eeprom)
 command id = `0x051B`, command body length = `4`, reply id = `0x051C`
 
 Device have 8kB of memory for configuration. It can be read using command `0x051B`. Format of payload (before encoding) is following:<br>
@@ -115,4 +115,19 @@ Python code for dumping whole configuration memory can be found here: [dump_cfg.
 
 Brief map of memory contents: [cfg_mem_map.md](cfg_mem_map.md)
 
+## Write configuration memory (eeprom)
+command id = `0x051D`, command body length = variable, reply id = `0x051E`
+
+TODO: Packet description
+
+
+
+## Change password
+command id = `0x052D`, command body length = `0x10`, reply id = `0x052E`, Reply length = `0x08`
+
+| Command ID  | len(cmd_body)+4 |  uint0                |  uint1                |  uint2                |  uint3                |    CRC16      |
+|  :---:      |      :---:      |    :---:              |    :---:              |    :---:              |    :---:              |   :----:      |
+| `0x2D 0x05` | `0x10 0x00`     | `0x00 0x00 0x00 0x00` | `0x00 0x00 0x00 0x00` | `0x00 0x00 0x00 0x00` | `0x00 0x00 0x00 0x00` | `0xFF 0xFF` |
+
+TODO: Figure how old and new password is stored in these 4 uints / 16 bytes
 
