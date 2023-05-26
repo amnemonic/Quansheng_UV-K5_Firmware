@@ -118,9 +118,11 @@ Brief map of memory contents: [cfg_mem_map.md](cfg_mem_map.md)
 ## Write configuration memory (eeprom)
 command id = `0x051D`, command body length = variable, reply id = `0x051E`
 
-TODO: Packet description
+| Command ID    | len(cmd_body)+4 |  Address (0 - 0x1FF)  |   Length      | dummy timestamp            | payload           |    CRC16      |
+|  :---:        |      :---:      |    :---:              |   :---:       | :----:                     |                   |   :----:      |
+| `0x1D` `0x05` | `0x08` `0x00`   | `0x00` `0x00`         | `0x10` `0x00` | `0x9f` `0x4c` `0x55` `0x64`| `0x00` ... `0x00` | `0xFF` `0xFF` |
 
-
+Note: Payload length have to be mulitple of 8 bytes. Address don't have to be aligned.
 
 ## Change password
 command id = `0x052D`, command body length = `0x10`, reply id = `0x052E`, Reply length = `0x08`
