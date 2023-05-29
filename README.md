@@ -1,8 +1,11 @@
 # Quansheng UV-K5 Firmware collection
 
-* [Official downloads page](http://qsfj.com/support/downloads/3002)
-* [Official product page](http://qsfj.com/products/3002)
-* [FCC Reports](https://fcc.id/XBPUV-K5) / [fcc.gov](https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&RequestTimeout=500&calledFromFrame=Y&application_id=8sqkxgC%2F1cYNHF0lGkSAwA%3D%3D&fcc_id=XBPUV-K5)
+Date       | Firmware-Updater | Firmware_Version                      | Programming software
+--         | --               | --                                    | --
+           |                  | [k5_2.01.17](k5_v2.01.17.bin)         |  
+2023/<05   | 1.1.11           | [k5_2.01.19](k5_v2.01.19_publish.bin) |  
+2023/05    | 1.1.11           | [k5_2.01.23](k5_v2.01.23_publish.bin) | V1.0.38 2023-02-11 07:49:36
+2023/05/09 | 1.1.12           | [k5_2.01.26](k5_v2.01.26_publish.bin) | V1.0.38
 
 
 # Firmware format
@@ -28,3 +31,11 @@ To prepare firmware file for sending to device you have to do 3 steps:
 * cut two last bytes (checksum)
 
 
+
+
+
+# Links
+
+* [Official downloads page](http://qsfj.com/support/downloads/3002)
+* [Official product page](http://qsfj.com/products/3002)
+* [FCC Reports](https://fcc.id/XBPUV-K5) / [fcc.gov](https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&RequestTimeout=500&calledFromFrame=Y&application_id=8sqkxgC%2F1cYNHF0lGkSAwA%3D%3D&fcc_id=XBPUV-K5)
