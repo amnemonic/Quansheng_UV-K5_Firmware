@@ -3,9 +3,9 @@ Application "QS Portable Radio CPS" reads following areas of memory:
 | Address| Length    | Content (probably)  |
 | :---:  |  ---:     | :------  |
 |`0x0E70`| `0xA8`    | Common settings + DTMF settings |
-|`0x0D60`| `0xCF`    | ? |
+|`0x0D60`| `0xCF`    | MR Channels Parameters (format unknown) |
 |`0x0F50`| `0x0C80`  | MR Channels names, 16 bytes/ch |
-|`0x0000`| `0x0D60`  | MR Channels config, 16 bytes/ch * 200 + VFO Channels⁺, 16 bytes/ch * 14 |
+|`0x0000`| `0x0D60`  | MR Channels frequency, 16 bytes/ch * 200 + VFO Channels⁺, 16 bytes/ch * 14 |
 |`0x1C00`| `0x0100`  | DTMF Contacts, 16 bytes/contact * 16 |  
 |`0x0E40`| `0x28`    | FM channels⁺, 2 bytes/ch * 20 |
 |`0x0F18`| `0x8`     | ? |
