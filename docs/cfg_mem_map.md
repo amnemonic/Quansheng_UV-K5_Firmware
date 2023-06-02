@@ -26,6 +26,11 @@ Additional addresses found by trial and error:
 |`0x0F44`| `1`       | 500TX: `01`=On, `00`=Off |
 |`0x0F45`| `1`       | 350EN: `01`=On, `00`=Off |
 |`0x0F46`| `1`       | SCREEN: `01`=On, `00`=Off |
+|`0x0EE0`| `8`       | ANI DTMF ID |
+|`0x0EE8`| `8`       | Kill Code |
+|`0x0EF0`| `8`       | Revive Code |
+|`0x0EF8`| `8`       | DTMF Up Code |
+|`0x0F08`| `8`       | DTMF Down Code |
 
 
 ⁺ Side note: all frequencies are stored as follows: 446.05625MHz is just 0x02A8A0B9 (44605625 in hex) with the bytes reversed (so the EEPROM contains B9 A0 A8 02.) For the FM channels, only 3 digits are used and the zeroes are cut, e.g. 91.1 FM becomes 911, 38F in hex, stored as 8F 03.
