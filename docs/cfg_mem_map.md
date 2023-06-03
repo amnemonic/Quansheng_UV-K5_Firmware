@@ -17,8 +17,9 @@ Additional addresses found by trial and error:
 | Address| Length    | Content (probably)  |
 | :---:  |  ---:     | :------  |
 |`0x0E97`| `1`       | Power on display mode: `0`=Fullscreen, `1`=Welcome info, `2`=Voltage |
-|`0x0EB0`| `0x10`      | `Quansheng` string (welcome screen)
-|`0x0EC0`| `0x10`      | `UV-K5` string (welcome screen, 2 line)
+|`0x0E98`| `4`       | Lock code to enable radio saved as uint32_le,<br>for example `configmem_write.py COM4 0xE98 3f420f00ffffffff` sets code to `999999`|
+|`0x0EB0`| `0x10`    | `Quansheng` string (welcome screen)
+|`0x0EC0`| `0x10`    | `UV-K5` string (welcome screen, 2 line)
 |`0x0F40`| `1`       | F-LOCK: `0`=Off, `1`=FCC, `2`=CE, `3`=GB, `4`=430, `5`=438 |
 |`0x0F41`| `1`       | 350TX: `01`=On, `00`=Off |
 |`0x0F42`| `1`       | ? |
