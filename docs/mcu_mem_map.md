@@ -15,4 +15,4 @@ RAM memory mapped at address `0x20000000`
 | --           | --                            |
 | `0x4006B800` | Uart base address             |
 | `0x40060000` | GPIO - PORT0 base address     |
-| `0x40061000` | GPIO - PORT0 base address     |
+| `0x40061000` | GPIO - PORT1 base address     |
