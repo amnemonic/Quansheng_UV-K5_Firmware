@@ -4,6 +4,7 @@
 qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
 
 :: here comment or uncomment mods
+mod_enable_tx_50to850.py temp\fw.dec.bin
 mod_custom_steps.py temp\fw.dec.bin
 mod_custom_freq_ranges.py temp\fw.dec.bin
 
