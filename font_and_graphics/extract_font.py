@@ -68,10 +68,13 @@ with open('03_16px_digits_stitched.bmp','wb') as f:
 
 
 
+
 #Small digits @0xD620
 with open('04_8px_digits.bmp','wb') as f:
     data = fw[0xD620:0xD620+84]
     f.write(bmp(data,8,len(data)))
+
+
 
 
 #Full alphabet @D674
