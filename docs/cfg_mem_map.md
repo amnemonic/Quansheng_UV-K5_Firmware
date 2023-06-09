@@ -18,6 +18,7 @@ Additional addresses found by trial and error:
 | :---:  |  ---:     | :------  |
 |`0x0E97`| `1`       | Power on display mode: `0`=Fullscreen, `1`=Welcome info, `2`=Voltage |
 |`0x0E98`| `4`       | Power on password saved as uint32_le, for example `3f420f00` = `999999`|
+|`0x0EA0`| `1`       | Voice Prompt (OFF=0, CHI=1, ENG=2) |
 |`0x0EB0`| `0x10`    | `Quansheng` string (welcome screen)
 |`0x0EC0`| `0x10`    | `UV-K5` string (welcome screen, 2 line)
 |`0x0F40`| `1`       | F-LOCK: `0`=Off, `1`=FCC, `2`=CE, `3`=GB, `4`=430, `5`=438 |
