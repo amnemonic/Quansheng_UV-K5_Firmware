@@ -77,3 +77,12 @@ new_freq_steps = [2500, 5000, 6250, 10000, 12500, 25000, 8330, 500000, 10, 1250,
 Append new, bigger tablie with frequency steps at the end of firmware thus expanding it, but as far as we are below 0xF000 then we should be fine. Please report any bugs as this is more experimental feature than others above.
 <hr>
 
+
+### `mod_custom_noaa_freqs.py`
+Customization:
+```python
+#first 10 PMR446 channels
+new_noaa_table =   [446_006_250, 446_018_750, 446_031_250, 446_043_750, 446_056_250, 446_068_750, 446_081_250, 446_093_750, 446_106_250, 446_118_750,  ]
+```
+Just sets new values for frequencies in NOAA scan list, nothing less, nothing more. 
+
