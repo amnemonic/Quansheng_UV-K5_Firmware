@@ -14,5 +14,8 @@ RAM memory mapped at address `0x20000000`
 | Address      | Description                   |
 | --           | --                            |
 | `0x4006B800` | Uart base address             |
-| `0x40060000` | GPIO - PORT0 base address     |
-| `0x40061000` | GPIO - PORT1 base address     |
+| `0x40060000` | GPIO - PORTA base address     |
+| `0x40060800` | GPIO - PORTB base address     |
+| `0x40061000` | GPIO - PORTC base address     |
+
+PORTB.6 - LCD Backgliht on
