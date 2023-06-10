@@ -64,3 +64,16 @@ No customization. You can just disable or enable it in `build.bat`.
 
 Edits initialization routine of ST7565 (LCD controller) to change default LCD mode normal to negative. See example: [negative_lcd.jpg](https://raw.githubusercontent.com/amnemonic/Quansheng_UV-K5_Firmware/main/hardware/negative_lcd.jpg)
 <hr>
+
+
+### `mod_more_freq_steps.py`
+Customization:
+```python
+# change below steps to new ones, values are in Hz
+# You can add reasonably more steps here
+
+new_freq_steps = [2500, 5000, 6250, 10000, 12500, 25000, 8330, 500000, 10, 1250, 20000]
+```
+Append new, bigger tablie with frequency steps at the end of firmware thus expanding it, but as far as we are below 0xF000 then we should be fine. Please report any bugs as this is more experimental feature than others above.
+<hr>
+
