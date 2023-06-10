@@ -19,3 +19,5 @@ RAM memory mapped at address `0x20000000`
 | `0x40061000` | GPIO - PORTC base address     |
 
 PORTB.6 - LCD Backgliht on
+PORTB.15 - BK1080 Power on?
+
