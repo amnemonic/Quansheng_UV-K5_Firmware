@@ -11,15 +11,67 @@ RAM memory mapped at address `0x20000000`
 
 ## Peripherals 
 
-| Address      | Description                   |
-| --:          | --                            |
-| `0x4006B800` | Uart base address             |
-| `0x40060000` | GPIO - PORTA base address     |
-| `0x40060800` | GPIO - PORTB base address     |
-|         `.6` | LCD Backgliht on              |
-|         `.9` | ST7565 A0 pin?                |
-|        `.15` | BK1080 Power on?              |
-| `0x40061000` | GPIO - PORTC base address     |
+### GPIO - PORT_A
+Base address: `0x40060000` <br>
+Direction address: `0x40060004` 
+
+Exposed pins
+| Pin  | Function   |
+|  --: | :--        |
+| PA3  |            |
+| PA4  |            |
+| PA5  |            |
+| PA6  |            |
+| PA7  |            |
+| PA8  |            |
+| PA9  |            |
+| PA10 | I2C_SCL for EEPROM and BK1080 |
+| PA11 | I2C_SDA for EEPROM and BK1080 |
+| PA12 |            |
+| PA13 |            |
+| PA14 |            |
+
+
+
+
+
+### GPIO - PORT_B
+Base address: `0x40060800` <br>
+Direction address: `0x40060804`
+
+Exposed pins
+| Pin  | Function         |
+|  --: | :--              |
+| PB6  | LCD Backgliht on |
+| PB7  |                  |
+| PB8  |                  |
+| PB9  | ST7565 A0 pin?   |
+| PB10 |                  |
+| PB11 |                  |
+| PB14 |                  |
+| PB15 | BK1080 Power on? |
+
+
+
+
+### GPIO - PORT_C
+Base address: `0x40061000` <br>
+Direction address: `0x40061004`
+
+Exposed pins
+| Pin  | Function   |
+|  --: | :--        |
+| PC0  |            |
+| PC1  |            |
+| PC2  |            |
+| PC3  |            |
+| PC4  |            |
+| PC5  |            |
+
+
+### UART
+Uart base address: `0x4006B800`
+
 
 
 
