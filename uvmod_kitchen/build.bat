@@ -11,6 +11,7 @@ rem mod_negative_screen.py temp\fw.dec.bin
 rem mod_change_contrast.py temp\fw.dec.bin
 rem mod_custom_steps.py temp\fw.dec.bin
 rem mod_custom_noaa_freqs.py temp\fw.dec.bin
+rem mod_mic_gain.py temp\fw.dec.bin
 
 
 qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin
