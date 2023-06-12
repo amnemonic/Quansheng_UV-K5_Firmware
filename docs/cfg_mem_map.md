@@ -1,4 +1,4 @@
-Application "QS Portable Radio CPS" reads following areas of memory:
+### Application "QS Portable Radio CPS" reads following areas of memory:
 
 | Address| Length    | Content (probably)  |
 | :---:  |  ---:     | :------  |
@@ -12,7 +12,35 @@ Application "QS Portable Radio CPS" reads following areas of memory:
 
 <hr>
 
-Additional addresses found by trial and error:
+### VCO Channels (ranges) settings `0x0C80` - `0x0D5F`
+| Freq range | address    | Lenght  |
+| :---       |  :---      | :------ |
+| F1 - A     |  `0x0C80`  |  `0xF`  |
+| F1 - B     |  `0x0C90`  |  `0xF`  |
+| F2 - A     |  `0x0CA0`  |  `0xF`  |
+| F2 - B     |  `0x0CB0`  |  `0xF`  |
+| F3 - A     |  `0x0CC0`  |  `0xF`  |
+| F3 - B     |  `0x0CD0`  |  `0xF`  |
+| F4 - A     |  `0x0CE0`  |  `0xF`  |
+| F4 - B     |  `0x0CF0`  |  `0xF`  |
+| F5 - A     |  `0x0D00`  |  `0xF`  |
+| F5 - B     |  `0x0D10`  |  `0xF`  |
+| F6 - A     |  `0x0D20`  |  `0xF`  |
+| F6 - B     |  `0x0D30`  |  `0xF`  |
+| F7 - A     |  `0x0D40`  |  `0xF`  |
+| F7 - B     |  `0x0D50`  |  `0xF`  |
+
+#### Single range format (16 bytes)
+| Offset  |  Lenght  | Info |
+| :---    |  :---    | :------      |
+| `0x0`   |  4       | Rx frequency |
+| `0x4`   |  4       | Tx frequency delta (0 means Rx=Tx) |
+| `0x8`   |  3       | ?? |
+| `0xB`   |  1       | Some flags, Bit4 = AM on |
+| `0xC`   |  4       | ?? |
+<hr>
+
+### Additional addresses found by trial and error:
 
 | Address| Length    | Content (probably)  | Position in menu |
 | :---:  |  ---:     | :------  | --: |

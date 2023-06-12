@@ -59,6 +59,18 @@ No customization. You can just disable or enable it in `build.bat`. The purpose 
 ℹ️ This patch alone doesn't extend available frequency ranges. For this use `mod_custom_freq_ranges.py` mod.
 <hr>
 
+### `mod_mic_gain.py`
+No customization. You can just disable or enable it in `build.bat`. The purpose of this mod is to increase the base mic gain from 0 to 16, thus
+making all of the mic gain steps in the menu higher as a result.
+
+A crude before (bottom) and after (top):
+
+![image](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/12097904/9c68fa9e-a3dc-4dfc-9d60-07a4399f87f9)
+
+ℹ️ This patch doesn't extend available mic gain steps (they will still be 0-4.) It just increases the _starting point_ on the mic gain
+scale sent to the BK4819 mic sensitivity register.
+<hr>
+
 ### `mod_negative_screen.py`
 No customization. You can just disable or enable it in `build.bat`.
 
