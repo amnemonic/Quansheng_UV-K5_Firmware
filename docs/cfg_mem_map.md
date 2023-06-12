@@ -30,15 +30,20 @@
 | F7 - A     |  `0x0D40`  |  `0xF`  |
 | F7 - B     |  `0x0D50`  |  `0xF`  |
 
-
-
+#### Single range format (16 bytes)
+| Offset  |  Lenght  | Info |
+| :---    |  :---    | :------      |
+| `0x0`   |  4       | Rx frequency |
+| `0x4`   |  4       | Tx frequency delta (0 means Rx=Tx) |
+| `0x8`   |  3       | ?? |
+| `0xB`   |  1       | Some flags, Bit4 = AM on |
+| `0xC`   |  4       | ?? |
 <hr>
 
 ### Additional addresses found by trial and error:
 
 | Address| Length    | Content (probably)  | Position in menu |
 | :---:  |  ---:     | :------  | --: |
-|`0x0CAB`| `1`       | AM Enabled (`0x00`=OFF, `0x10`=ON) | 48 |
 |`0x0E7D`| `1`       | Backlight : `0`=Off, `1..5`=Seconds | 16 |
 |`0x0E97`| `1`       | Power on display mode: `0`=Fullscreen, `1`=Welcome info, `2`=Voltage | 45 |
 |`0x0E98`| `4`       | Power on password saved as uint32_le, for example `3f420f00` = `999999`| - |
