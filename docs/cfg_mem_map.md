@@ -16,6 +16,7 @@ Additional addresses found by trial and error:
 
 | Address| Length    | Content (probably)  | Position in menu |
 | :---:  |  ---:     | :------  | --: |
+|`0x0CAB`| `1`       | AM Enabled (`0x00`=OFF, `0x10`=ON) | 48 |
 |`0x0E7D`| `1`       | Backlight : `0`=Off, `1..5`=Seconds | 16 |
 |`0x0E97`| `1`       | Power on display mode: `0`=Fullscreen, `1`=Welcome info, `2`=Voltage | 45 |
 |`0x0E98`| `4`       | Power on password saved as uint32_le, for example `3f420f00` = `999999`| - |
