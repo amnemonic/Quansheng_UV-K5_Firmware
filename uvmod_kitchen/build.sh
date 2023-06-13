@@ -14,5 +14,6 @@ python3 mod_custom_freq_ranges.py temp/fw.dec.bin
 # python3 mod_custom_steps.py temp/fw.dec.bin
 # python3 mod_custom_noaa_freqs.py temp/fw.dec.bin
 # python3 mod_mic_gain.py temp/fw.dec.bin
+# python3 mod_disable_tx_completely.py temp/fw.dec.bin
 
 python3 qsfirm.py pack temp/fw.dec.bin temp/fw.ver.bin k5_v2.01.26_MODDED.bin
