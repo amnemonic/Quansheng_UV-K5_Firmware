@@ -97,7 +97,7 @@ Customization:
 new_noaa_table =   [446_006_250, 446_018_750, 446_031_250, 446_043_750, 446_056_250, 446_068_750, 446_081_250, 446_093_750, 446_106_250, 446_118_750,  ]
 ```
 Just sets new values for frequencies in NOAA scan list, nothing less, nothing more. 
-
+<hr>
 
 
 ### `mod_disable_tx_completely.py`
@@ -106,4 +106,4 @@ No customization.
 On ALL frequencies radio shows "DISABLED" info and don't transmit at any band.
 
 ℹ️ Please do not use this mod together with `mod_enable_tx_50to850.py`
-
+<hr>
