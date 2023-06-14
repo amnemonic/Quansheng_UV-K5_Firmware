@@ -107,3 +107,19 @@ On ALL frequencies radio shows "DISABLED" info and don't transmit at any band.
 
 ℹ️ Please do not use this mod together with `mod_enable_tx_50to850.py`
 <hr>
+
+
+
+### `mod_enable_tx_50to850_except_airband.py`
+Customization:
+```python
+# set values to block band
+block_freq_lo = 118_000_000
+block_freq_hi = 137_000_000
+```
+
+By default block frequencies between 118 and 137MHz. 
+
+
+ℹ️ Please do not use this mod together with `mod_enable_tx_50to850.py` or `mod_disable_tx_completely.py`
+<hr>
