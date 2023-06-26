@@ -16,6 +16,13 @@
 (not in any particular order)
 <hr>
 
+### `mod_custom_font.py`
+Customization:
+Replace the `font` variable with the raw binary of a 1-bit, uncompressed bitmap that is interleaved as the firmware expects it (a modification to extract_font.py will be made for this purpose soon.)
+
+Replaces the font bitmap with a custom font of your choosing
+<hr>
+
 ### `mod_change_contrast.py`
 Customization:
 ```python
