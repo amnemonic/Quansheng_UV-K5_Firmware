@@ -59,14 +59,14 @@ Base address: `0x40061000` <br>
 Direction address: `0x40061004`
 
 Exposed pins
-| Pin  | Function   |
-|  --: | :--        |
-| PC0  |            |
-| PC1  |            |
-| PC2  |            |
-| PC3  |            |
-| PC4  |            |
-| PC5  |            |
+| Pin  | Function       |
+|  --: | :--            |
+| PC0  |                |
+| PC1  |                |
+| PC2  |                |
+| PC3  | Flashlight LED |
+| PC4  |                |
+| PC5  |                |
 
 
 ### UART
