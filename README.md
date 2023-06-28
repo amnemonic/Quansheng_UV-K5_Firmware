@@ -1,11 +1,14 @@
 # TOC
 At the beginning I was planning to put here only official firmwares found somwhere in update files and internet but now, with help from people involved in process of reverse enginnering of uvk5 you can find here some knowledge and findings regarding our very wallet friendly yet so capable radio. Here is table of contents of this repository.
 
+## Build your own firmware - [/uvmod_kitchen](/uvmod_kitchen)
+You can select what you want to include in your modded firmware. If you want unlock all frequencies but also have custom frequency steps? This is section for you. Thanks to this tool you can mix and match different mods to be included in final firmware. All mods are basing on firmware version k5_2.01.26.
+
 ## Documents - [/docs](/docs)
 Some (incomplete) documents with info about CPU I/O pins, memory mappings, firmware format etc. 
 
 ## Font and graphics - [/font_and_graphics](/font_and_graphics)
-Simple python script whcih extracts from firmware all bitmaps used in radio's user interface. 
+Simple python script whcih extracts from firmware all bitmaps used in radio's user interface. It works as substitute of documentation.
 
 ## Datasheets and drawings - [/hardware](/hardware)
 Here are all the efforts of searching intrnet for datasheets but also drawings of reverse engineered schematics and high resolution photos of PCB
@@ -13,11 +16,11 @@ Here are all the efforts of searching intrnet for datasheets but also drawings o
 ## OpenOCD configs - [/openocd](/openocd)
 Tools necessary to unbrick your radio or dump flash memory
 
-## Utility scripts -[/python-utils](/python-utils)
-Python library and sample scripts which leverage official communication protocol.
+## Utility scripts - [/python-utils](/python-utils)
+Python library and sample scripts which leverage official communication protocol. You can dump EEPROM and reboot your radio or decode firmware. 
 
 ## Quansheng UV-K5 Firmware collection - [/firmware](/firmware)
-
+Only stock firmwares, no mods, no alterations. If you want modified firmware ready to flash please check out [Andrej](https://github.com/Tunas1337/UV-K5-Modded-Firmwares)'s repo
 Date       | Firmware-Updater | Firmware_Version                               | Programming software             |
 --         | --               | --                                             | --                               |
            |                  | [k5_2.01.17](firmware/k5_v2.01.17_publish.bin) |                                  |
