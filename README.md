@@ -13,6 +13,8 @@ Date       | Firmware-Updater | Firmware_Version                               |
 * [Tunas1337 - UV-K5-Modded-Firmwares](https://github.com/Tunas1337/UV-K5-Modded-Firmwares)
 * [sq5bpf - uvk5-reverse-engineering](https://github.com/sq5bpf/uvk5-reverse-engineering)
 * [fagci - qs-uvk5-firmware-modder](https://github.com/fagci/qs-uvk5-firmware-modder)
+* [piotr022 - UV_K5_playground - first attempts to prepare build and debug environment](https://github.com/piotr022/UV_K5_playground)
+* [Hackaday article 🛠](https://hackaday.com/2023/06/23/easy-modifications-for-inexpensive-radios/)
 * [Telegram Channel - EN](https://t.me/quansheng_uvk5_en)
 * [Telegram Channel - RU](https://t.me/uv_k5)
 * [Telegram Channel - ES](https://t.me/QuanShengES)
