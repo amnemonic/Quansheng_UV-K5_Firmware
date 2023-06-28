@@ -1,4 +1,22 @@
-# Quansheng UV-K5 Firmware collection
+# TOC
+At the beginning I was planning to put here only official firmwares found somwhere in update files and internet but now, with help from people involved in process of reverse enginnering of uvk5 you can find here some knowledge and findings regarding our very wallet friendly yet so capable radio. Here is table of contents of this repository.
+
+## Documents - [/docs](/docs)
+Some (incomplete) documents with info about CPU I/O pins, memory mappings, firmware format etc. 
+
+## Font and graphics - [/font_and_graphics](/font_and_graphics)
+Simple python script whcih extracts from firmware all bitmaps used in radio's user interface. 
+
+## Datasheets and drawings - [/hardware](/hardware)
+Here are all the efforts of searching intrnet for datasheets but also drawings of reverse engineered schematics and high resolution photos of PCB
+
+## OpenOCD configs - [/openocd](/openocd)
+Tools necessary to unbrick your radio or dump flash memory
+
+## Utility scripts -[/python-utils](/python-utils)
+Python library and sample scripts which leverage official communication protocol.
+
+## Quansheng UV-K5 Firmware collection - [/firmware](/firmware)
 
 Date       | Firmware-Updater | Firmware_Version                               | Programming software             |
 --         | --               | --                                             | --                               |
