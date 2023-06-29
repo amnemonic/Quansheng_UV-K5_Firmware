@@ -77,16 +77,19 @@ with open('04_8px_digits.bmp','wb') as f:
 
 
 
-#Full alphabet @D674
+#Full alphabet @0xD66D
 with open('05_16px_alphabet.bmp','wb') as f:
-    data = fw[0xD674:0xD674+1520]
+    data = fw[0xD66D:0xD66D+ 16*95] # 95 characters, 16 bytes each
     f.write(bmp(data,8,len(data)))
 
 with open('06_16px_alphabet_stitched.bmp','wb') as f:
-    data = mem16toBmp(fw[0xD67c:0xD67c+1512],8)
+    data = mem16toBmp(fw[0xD66D:0xD66D+ 16*95],8)
     f.write(bmp(data,16,len(data)//2))
 
 
 
 
-
+#All of above in one
+with open('07_complete.bmp','wb') as f:
+    data = fw[0xD348:0xD66D+ 16*95] # 95 characters, 16 bytes each
+    f.write(bmp(data,8,len(data)))
