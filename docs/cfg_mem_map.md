@@ -52,7 +52,7 @@
 |`0x0EC0`| `0x10`    | `UV-K5` string (welcome screen, 2 line)| - |
 |`0x0F40`| `1`       | F-LOCK: `0`=Off, `1`=FCC, `2`=CE, `3`=GB, `4`=430, `5`=438 | 53 |
 |`0x0F41`| `1`       | 350TX: `01`=On, `00`=Off | 52 |
-|`0x0F42`| `1`       | Radio remotely "Killed" by DTMF "Kill code" `01`=Killed, `00`=Normal mode | - |
+|`0x0F42`| `1`       | Radio Stun/Kill: | `01`=Killed, `00`=Not Killed |
 |`0x0F43`| `1`       | 200TX: `01`=On, `00`=Off | 54 |
 |`0x0F44`| `1`       | 500TX: `01`=On, `00`=Off | 55 |
 |`0x0F45`| `1`       | 350EN: `01`=On, `00`=Off | 56 |
