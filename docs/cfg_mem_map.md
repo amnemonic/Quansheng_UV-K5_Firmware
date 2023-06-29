@@ -56,7 +56,7 @@
 |`0x0F43`| `1`       | 200TX: `01`=On, `00`=Off | 54 |
 |`0x0F44`| `1`       | 500TX: `01`=On, `00`=Off | 55 |
 |`0x0F45`| `1`       | 350EN: `01`=On, `00`=Off | 56 |
-|`0x0F46`| `1`       | SCREEN: `01`=On, `00`=Off | 57 |
+|`0x0F46`| `1`       | SCREN (Scrambling Enabled): `01`=On, `00`=Off | 57 |
 |`0x0EE0`| `8`       | ANI DTMF ID | 35 |
 |`0x0EE8`| `8`       | Kill Code ||
 |`0x0EF0`| `8`       | Revive Code ||
