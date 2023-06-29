@@ -29,7 +29,13 @@ https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/27962bd0-b
 Similar as above but this time we are changing digits:
 
 https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/3f15dd8c-ee0e-4579-a9bc-4f6ed42fc853
+<hr>
 
+### `mod_custom_font_VCR.py`
+Changes only big digits to font [VCR OSD Mono](https://www.dafont.com/vcr-osd-mono.font)
+
+![vcrfont](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/68694dad-19a9-4904-b878-758315ab4d2a)
+<hr>
 
 
 ### `mod_change_contrast.py`
