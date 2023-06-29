@@ -21,7 +21,16 @@ Customization:
 Replace the `font` variable with the raw binary of a 1-bit, uncompressed bitmap that is interleaved as the firmware expects it (a modification to extract_font.py will be made for this purpose soon.)
 
 Replaces the font bitmap with a custom font of your choosing
+
+https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/27962bd0-b079-4595-9dca-8dee232626ee
 <hr>
+
+### `mod_custom_font_DO7OO.py`
+Similar as above but this time we are changing digits:
+
+https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/3f15dd8c-ee0e-4579-a9bc-4f6ed42fc853
+
+
 
 ### `mod_change_contrast.py`
 Customization:
