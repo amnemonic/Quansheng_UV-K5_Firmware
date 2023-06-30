@@ -2,6 +2,8 @@ from PIL import Image
 import PIL.ImageOps
 import sys
 
+if len(sys.argv)!=3: print('Usage: BigDigits_encode.py <input_bitmap.bmp> <output_python_patch.py>') ; exit(1)
+
 
 def pil_8b1b(in_bytes):
     if len(in_bytes)!=8:
@@ -44,3 +46,7 @@ for i in range(0,11): # 11 characters of 13px width
 
 big_digits_patch = ''.join([f'\\x{i:02X}' for i in raw_deint])
 print("big_digits=b'"+big_digits_patch+"'")
+
+
+with open(sys.argv[2],'w') as f, open('BigDigits_encode.template','r') as template:
+    f.write(template.read().replace('{_ARRAY_}',big_digits_patch))

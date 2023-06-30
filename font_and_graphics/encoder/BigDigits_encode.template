@@ -1,0 +1,21 @@
+## PATCH file created by BigDigits_encode.py
+## Replaces only big digits
+
+big_digits=b'{_ARRAY_}'
+
+
+
+##--------------------- do not modify below this line ---------------------------------------------------
+import os,sys,struct
+print('Running',os.path.basename(sys.argv[0]),'mod...')
+fw =  bytearray(open(sys.argv[1],'rb').read())
+
+
+fw[0xD502:0xD502+len(big_digits)]   = big_digits
+
+
+
+if len(fw)<0xEFFF:
+    open(sys.argv[1],'wb').write(fw)
+else:
+    print('ERROR file too big!')
