@@ -47,7 +47,6 @@ for i in range(0,95): # 95 characters of 8px width
 big_digits_patch = ''.join([f'\\x{i:02X}' for i in raw_deint])
 print("alphabet=b'"+big_digits_patch+"'")
 
-open('test.bin','wb').write(raw_deint)
 
 with open(sys.argv[2],'w') as f, open('Alphabet_encode.template','r') as template:
     f.write(template.read().replace('{_ARRAY_}',big_digits_patch))
