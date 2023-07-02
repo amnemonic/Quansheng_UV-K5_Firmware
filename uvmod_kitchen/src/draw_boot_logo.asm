@@ -10,17 +10,16 @@
 .align 1
 .code 16
 
+.include "inc/uvk5_v26_symbols.asm"
+
 
 @@@ ->>>> 0x9B3C
 .text
     PUSH    {R4,R5,LR}
-    LDR     R2, =0x400        @Length=1024 (128 x 64 bits)
-    LDR     R1, =0xDEADBEEF   @Source addres placeholder, later replaced by image data pointer
-    LDR     R0, =0x20000684   @Destination = LCD Buffer
-    BL      0x0178            @copy mem
+    _copymem LCD_BUFFER_START, 0xDEADBEEF, LCD_BUFFER_SIZE
 
-    BL      0xB6B0            @Draw_StatusBar_B6B0
-    BL      0xB638            @Draw_MainScreen_B638
+    BL      drawStatusBar
+    BL      drawMainScreen
 
     POP     {R4,R5,PC}
 
