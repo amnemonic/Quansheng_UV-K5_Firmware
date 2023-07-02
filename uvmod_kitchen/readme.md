@@ -104,7 +104,9 @@ scale sent to the BK4819 mic sensitivity register.
 ### `mod_negative_screen.py`
 No customization. You can just disable or enable it in `build.bat`.
 
-Edits initialization routine of ST7565 (LCD controller) to change default LCD mode normal to negative. See example: [negative_lcd.jpg](https://raw.githubusercontent.com/amnemonic/Quansheng_UV-K5_Firmware/main/hardware/negative_lcd.jpg)
+Edits initialization routine of ST7565 (LCD controller) to change default LCD mode normal to negative.
+
+<img src="https://raw.githubusercontent.com/amnemonic/Quansheng_UV-K5_Firmware/main/hardware/negative_lcd.jpg" height="280" />
 <hr>
 
 
