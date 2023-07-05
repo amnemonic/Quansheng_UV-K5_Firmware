@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-import sys
+import sys, os
 import libuvk5
 
 
