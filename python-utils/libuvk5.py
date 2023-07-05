@@ -80,6 +80,7 @@ class uvk5:
         
         self.CMD_REBOOT       = b'\xDD\x05' #0x05DD -> no reply
         self.CMD_0530         = b'\x30\x05' #0x0530 -> no reply //Only in bootloader
+        self.CMD_0527         = b'\x27\x05'
         
         self.debug = False if os.getenv('DEBUG') is None else True
 
@@ -204,9 +205,18 @@ class uvk5:
 
 
     def unk_fn_1325(self,uint1,uint2,uint3,uint4):
-        cmd = self.CMD_1325 + struct.pack('<HIIII',16,uint1,uint2,uint3,uint4)
+        cmd = self.CMD_052D + struct.pack('<HIIII',16,uint1,uint2,uint3,uint4)
         cmd_crc = struct.pack('<H',crc16_ccitt(cmd))
         cmd= b'\xAB\xCD' + struct.pack('<H',20) + cmd + cmd_crc + b'\xDC\xBA'
         self.uart_send_msg(cmd)
         reply = self.uart_receive_msg(128)
         return reply[12:-4]
+        
+    def get_rssi(self):
+        cmd = self.CMD_0527 + struct.pack('<H',4) + self.sessTimestamp
+        cmd_crc = struct.pack('<H',crc16_ccitt(cmd))
+        cmd = b'\xAB\xCD' + struct.pack('<H',8) + cmd + cmd_crc + b'\xDC\xBA'
+        self.uart_send_msg(cmd)
+        reply = self.uart_receive_msg(16)
+        rssi,noise,glitch = struct.unpack('<HBB',reply[8:-4])
+        return {'rssi':rssi, 'noise':noise, 'glitch':glitch, 'raw':reply[8:-4].hex()}
