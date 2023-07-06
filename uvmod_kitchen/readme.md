@@ -38,6 +38,14 @@ Changes only big digits to font [VCR OSD Mono](https://www.dafont.com/vcr-osd-mo
 <hr>
 
 
+### `mod_custom_bootscreen.py`
+Set up your custom boot logo image. Just like in old times of nokia 3310 😉
+By default Q logo is set. To set up your own image paint a b&w bitmap image of size 128x64px then convert it to array using application like [LCD Assistant](http://en.radzio.dxp.pl/bitmap_converter/)
+
+![qs_logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/7fece61e-ee21-47f4-a84d-da23b8c0721d)
+
+<hr>
+
 ### `mod_change_contrast.py`
 Customization:
 ```python
@@ -96,8 +104,12 @@ scale sent to the BK4819 mic sensitivity register.
 ### `mod_negative_screen.py`
 No customization. You can just disable or enable it in `build.bat`.
 
-Edits initialization routine of ST7565 (LCD controller) to change default LCD mode normal to negative. See example: [negative_lcd.jpg](https://raw.githubusercontent.com/amnemonic/Quansheng_UV-K5_Firmware/main/hardware/negative_lcd.jpg)
+Edits initialization routine of ST7565 (LCD controller) to change default LCD mode normal to negative.
+
+<img src="https://raw.githubusercontent.com/amnemonic/Quansheng_UV-K5_Firmware/main/hardware/negative_lcd.jpg" height="280" />
 <hr>
+
+
 
 
 ### `mod_more_freq_steps.py`

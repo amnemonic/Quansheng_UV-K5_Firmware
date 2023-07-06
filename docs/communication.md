@@ -68,6 +68,29 @@ def crc16_ccitt(data):
 
 
 # Command types
+## Summary
+| Cmd ID    | Reply ID | Description                                    | Remarks           |
+|-----------|----------|------------------------------------------------|------------------ |
+| `0x0514`  | `0x0515` | [Get Firmware Version](#get-firmware-version)  | Only in Main ROM  |
+| `0x0516`  | `0x0517` | Write to NVR?                                  | Only in Flashing mode ℹ |
+| none      | `0x0518` | Bootloader loop message                        | Only in Flashing mode until `0x0530` sent ℹ|
+| `0x0519`  | `0x051A` | Write to Flash                                 | Only in Flashing mode ℹ |
+| `0x051B`  | `0x051C` | EEProm Read                                    | Only in Main ROM  |
+| `0x051D`  | `0x051E` | EEProm Write                                                    | Only in Main ROM  |
+| `0x051F`  | `0x0520` | Sends value to Reg 0x3B of BK4819 (Crystal Frequency Low-16bit) | Only in Main ROM, works only in lock mode - see `0x052F` |
+| `0x0521`  | `0x0522` | Similar as above but different                 | Only in Main ROM  |
+| `0x0527`  | `0x0528` | Returns values of registers of BK4819: 0x67 (RSSI), 0x65 (Ex-noiseindicator) and 0x63 (Glitch indicator) | Only in Main ROM  |
+| `0x0529`  | `0x052A` | Read some values from ADC                      | Only in Main ROM  |
+| `0x052D`  | `0x052E` | Set Password                                   | Only in Main ROM  |
+| `0x052F`  | `0x0515` | Lock mode + Reply FW Ver                       | Only in Main ROM  |
+| `0x0530`  |          | Break BootLoader wait loop                     | Only in Flashing mode ℹ |
+| `0x05DD`  | none     | Jump to 0x20000000 (Reset)                     | Only in Main ROM  |
+
+
+
+
+
+
 ## Get firmware version
 command id = `0x0515`, command body length = `0`, reply id = `0x0514`
 ```python
