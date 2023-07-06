@@ -81,4 +81,5 @@
 Remarks:
  * Sample value is RAW data from ADC
  * Voltage value is calculated with formula: `Volts` = `7.6`× `RAW_ADC` / `BattLevel3`. For example for ADC=2000, Voltage = 7.6×2000/1901 ≈ 7.99V
-
+ * if during boot `BattLevel0` will be larger than `5000` then these default levels will be set: `BattLevel0`=1900 and `BattLevel1`=2000
+ * `BattLevel5`is always set up to 2300 and value from EEPROM is ignored
