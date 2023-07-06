@@ -22,7 +22,7 @@ class App():
         #RSSI
         self.Label1 = ttk.Label(self.mainWindow, text="RSSI (Register 0x67) = ", font=('Consolas',10), justify=tk.LEFT, foreground='#FFF', background='#000')
         self.Label1.place(x=10, y=10)
-        self.ProgressBar1 = ttk.Progressbar(self.mainWindow, orient='horizontal', mode='determinate', maximum=0x1FF)
+        self.ProgressBar1 = ttk.Progressbar(self.mainWindow, orient='horizontal', mode='determinate', maximum=0x1FF/2)
         self.ProgressBar1.place(x=10, y=30, width=400, height=20)
         self.ProgressBar1['value'] = 0
 
@@ -65,8 +65,8 @@ class App():
     def update(self):
         data = self.radio.get_rssi()
         #print(data)
-        self.Label1.config(text="RSSI (Register 0x67) = {}".format(data['rssi']))
-        self.ProgressBar1['value'] = data['rssi']
+        self.Label1.config(text="RSSI (Register 0x67) = {} dBm".format(data['rssi']))
+        self.ProgressBar1['value'] = data['rssi']+160
         
         self.Label2.config(text="Ex-noiseindicator, dB/step. (Register 0x65) = {}".format(data['noise']))
         self.ProgressBar2['value'] = data['noise']
