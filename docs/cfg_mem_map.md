@@ -65,3 +65,20 @@
 
 
 ⁺ Side note: all frequencies are stored as follows: 446.05625MHz is just 0x02A8A0B9 (44605625 in hex) with the bytes reversed (so the EEPROM contains B9 A0 A8 02.) For the FM channels, only 3 digits are used and the zeroes are cut, e.g. 91.1 FM becomes 911, 38F in hex, stored as 8F 03.
+
+
+### Battery calibration area
+
+| Address  | Length    | Content           | Sample value |
+| :---:    |  ---:     | :------           | --           |
+| `0x1F40` |  `2`      | Battery Level 0   | 1258         |
+| `0x1F42` |  `2`      | Battery Level 1   | 1747         |
+| `0x1F44` |  `2`      | Battery Level 2   | 1876         |
+| `0x1F46` |  `2`      | Battery Level 3   | 1901         |
+| `0x1F48` |  `2`      | Battery Level 4   | 2004         |
+| `0x1F4a` |  `2`      | Battery Level 5   | 2300         |
+
+Remarks:
+ * Sample value is RAW data from ADC
+ * Voltage value is calculated with formula: `Volts` = `7.6`× `RAW_ADC` / `BattLevel3`. For example for ADC=2000, Voltage = 7.6×2000/1901 ≈ 7.99V
+
