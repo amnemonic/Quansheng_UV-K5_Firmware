@@ -219,4 +219,5 @@ class uvk5:
         self.uart_send_msg(cmd)
         reply = self.uart_receive_msg(16)
         rssi,noise,glitch = struct.unpack('<HBB',reply[8:-4])
+        rssi = rssi / 2 - 160
         return {'rssi':rssi, 'noise':noise, 'glitch':glitch, 'raw':reply[8:-4].hex()}
