@@ -24,6 +24,7 @@ python3 qsfirm.py unpack k5_v2.01.26_publish.bin temp/fw.dec.bin temp/fw.ver.bin
 # mod_disable_tx_completely.py temp\fw.dec.bin
 # mod_enable_tx_50to850.py temp\fw.dec.bin
 # mod_enable_tx_50to850_except_airband.py temp\fw.dec.bin
+# mod_enable_swd_port.py temp\fw.dec.bin
 
 # mod_menu_strings.py temp\fw.dec.bin
 
