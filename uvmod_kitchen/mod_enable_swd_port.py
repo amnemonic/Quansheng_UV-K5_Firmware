@@ -1,6 +1,7 @@
 # nothing to configure here
 
 # enables SWD port which is normally disabled during Firwmware startup
+# thanks for https://github.com/manujedi
 
 ##--------------------- do not modify below this line ---------------------------------------------------
 import os,sys,struct
