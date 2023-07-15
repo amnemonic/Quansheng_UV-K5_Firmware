@@ -17,7 +17,7 @@ rem python mod_custom_font_VCR.py temp\fw.dec.bin
 rem python mod_custom_noaa_freqs.py temp\fw.dec.bin
 
 rem python mod_custom_steps.py temp\fw.dec.bin
-    python mod_more_freq_steps.py temp\fw.dec.bin
+    python mod_more_freq_steps_and_backlight_duration.py temp\fw.dec.bin
 
 rem python mod_disable_tx_completely.py temp\fw.dec.bin
 rem python mod_enable_tx_50to850.py temp\fw.dec.bin
