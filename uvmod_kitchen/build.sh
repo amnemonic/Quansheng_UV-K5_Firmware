@@ -19,7 +19,7 @@ python3 qsfirm.py unpack k5_v2.01.26_publish.bin temp/fw.dec.bin temp/fw.ver.bin
 # mod_custom_noaa_freqs.py temp/fw.dec.bin
 
 # mod_custom_steps.py temp/fw.dec.bin
-  mod_more_freq_steps.py temp/fw.dec.bin
+  mod_more_freq_steps_and_backlight_duration.py temp/fw.dec.bin
 
 # mod_disable_tx_completely.py temp/fw.dec.bin
 # mod_enable_tx_50to850.py temp/fw.dec.bin
