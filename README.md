@@ -44,6 +44,7 @@ Only stock firmwares, no mods, no alterations. If you want modified firmware rea
 * [Telegram Channel - IT](https://t.me/+W31XPFpurWk0NzM0)
 * [Telegram Channel - PL](https://t.me/uvk5_pl)
 * [Telegram Channel - DE](https://t.me/quanshenguv5kde)
+* [Telegram Channel - UA](https://t.me/radioamators/38782)
 * Official UV-K5 support page:              [Chinese](http://qsfj.com/support/downloads/3002) | [English](http://en.qsfj.com/support/downloads/3002)
 * Official UV-K5 product page:              [Chinese](http://qsfj.com/products/3002)          | [English](http://en.qsfj.com/products/3002)
 * Official UV-K5(8) aka UV-K6 support page: [Chinese](http://qsfj.com/support/downloads/3268) | [English](http://en.qsfj.com/support/downloads/3268)
