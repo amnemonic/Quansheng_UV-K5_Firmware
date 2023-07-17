@@ -3,6 +3,16 @@
 
 python qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
 
+
+
+:: mods by https://github.com/piotr022
+:: please choose only one of them and always 
+:: place as first mod in this batch file
+rem mod_piotr022_rssi_sbar.py temp\fw.dec.bin
+rem mod_piotr022_rssi_printer.py temp\fw.dec.bin
+
+
+
 :: here comment or uncomment mods
     python mod_battery_icon.py temp\fw.dec.bin
 rem python mod_negative_screen.py temp\fw.dec.bin
