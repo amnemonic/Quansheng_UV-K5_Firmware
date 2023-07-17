@@ -157,3 +157,17 @@ By default block frequencies between 118 and 137MHz.
 
 ℹ️ Please do not use this mod together with `mod_enable_tx_50to850.py` or `mod_disable_tx_completely.py`
 <hr>
+
+
+### `mod_ota_qrg.py`
+Customization:
+```python
+AIR_COPY_FREQ_HZ = 433_600_000
+```
+
+Default value for copying setting over the air aka "AIR COPY" is 410.025 MHz. You can change that default value using this mod.
+
+![aircopy](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/fe0b7525-e94d-472e-bcc6-c346e9c71fda)
+
+
+<hr>
