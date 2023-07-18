@@ -46,6 +46,17 @@ By default Q logo is set. To set up your own image paint a b&w bitmap image of s
 
 <hr>
 
+
+### `mod_custom_bootscreen_narrow.py`
+Basically same as above mod but allows to use smaller logo therefore less space at the end of the file.
+By default Do7oo logo is set. To set up your own image paint a b&w bitmap image of width 128px then convert it to array using application like [LCD Assistant](http://en.radzio.dxp.pl/bitmap_converter/)
+
+Customization: before drawing logo, screen buffer is filled with value defined in `clean_pattern` variable. if you set it to `0xFF` then screen will be filled "black", if `0x00` then screen will be clean. 
+
+<hr>
+
+
+
 ### `mod_change_contrast.py`
 Customization:
 ```python
