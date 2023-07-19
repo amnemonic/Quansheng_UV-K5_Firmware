@@ -10,7 +10,7 @@
  - [start command prompt](https://www.google.com/search?q=how+to+open+command+prompt+windows) in `uvmod_kitchen` directory
  - run command `build.bat`
  - look for any errors
- - now you can flash new firmware file named `k5_v2.01.26_MODDED.bin` 
+ - now you can flash new firmware file named `k5_v2.01.26_MODDED.bin` ([video by K5YVY](https://youtu.be/ctlDHpQKjD4?t=24))
 
 ## List of mods
 (not in any particular order)
