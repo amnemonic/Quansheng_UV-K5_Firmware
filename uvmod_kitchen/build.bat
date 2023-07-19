@@ -37,6 +37,8 @@ rem python mod_menu_strings.py temp\fw.dec.bin
 rem python mod_custom_bootscreen.py temp\fw.dec.bin
 rem python mod_enable_swd_port.py temp\fw.dec.bin
 
+python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
+
 :: end of mods
 
 python qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin

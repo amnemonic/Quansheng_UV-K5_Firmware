@@ -28,4 +28,6 @@ python3 qsfirm.py unpack k5_v2.01.26_publish.bin temp/fw.dec.bin temp/fw.ver.bin
 
 # mod_menu_strings.py temp/fw.dec.bin
 
+# .\src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
+
 python3 qsfirm.py pack temp/fw.dec.bin temp/fw.ver.bin k5_v2.01.26_MODDED.bin
