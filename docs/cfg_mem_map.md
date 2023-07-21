@@ -83,3 +83,27 @@ Remarks:
  * Voltage value is calculated with formula: `Volts` = `7.6`× `RAW_ADC` / `BattLevel3`. For example for ADC=2000, Voltage = 7.6×2000/1901 ≈ 7.99V
  * if during boot `BattLevel0` will be larger than `5000` then these default levels will be set: `BattLevel0`=1900 and `BattLevel1`=2000
  * `BattLevel5`is always set up to 2300 and value from EEPROM is ignored
+
+
+### Function keys
+
+| Address  | Length    | Content                     | Range        |
+| :---:    |  :---:    | :------                     | --           |
+| `0x0E91` |  `1`      | Key 1 - short press action  | `0` - `8`    |
+| `0x0E92` |  `1`      | Key 1 - long  press action  | `0` - `8`    |
+| `0x0E93` |  `1`      | Key 2 - short press action  | `0` - `8`    |
+| `0x0E94` |  `1`      | Key 2 - long  press action  | `0` - `8`    |
+
+#### Actions
+
+| Value  | Action             |
+| :---:  | :---               |
+| `0`    | No action          |
+| `1`    | Flashlight         |
+| `2`    | Power select       |
+| `3`    | Monitor            |
+| `4`    | Scan on/off        |
+| `5`    | VOX on/off         |
+| `6`    | Alarm on/off       |
+| `7`    | FM Radio on/off    |
+| `8`    | Transmitting 1750  |
