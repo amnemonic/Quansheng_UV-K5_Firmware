@@ -68,6 +68,27 @@ if sys.argv[1]=='unpack':
 
 elif sys.argv[1]=='pack':
     decoded_firmware = open(sys.argv[2],'rb').read()
+
+    # visual indicator for firmware size and big warning if too big
+    current_size = len(decoded_firmware)
+    max_size = 0xf000
+
+    percentage = (current_size / max_size) * 100
+    bar_length = int(percentage / 2)  # Assuming each character represents 2% progress
+    size_bar = '[' + '=' * bar_length + ' ' * (50 - bar_length) + ']'
+
+    print(f"\n\nFirmware takes up {current_size}/{max_size} bytes of available space:")
+    print(f"Flash usage: {size_bar} {percentage:.2f}%\n\n")
+    
+    if current_size > max_size:
+        print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING")
+        print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING")
+        print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING")
+        print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING\n")
+        print("WARNING: Firmware size exceeds the maximum allowed size of 0xf000 (61440) bytes!")
+        print("Using an oversize firmware will not work correctly and may lead to freezes, crashes and defects.\n")
+    
+    
     version_info     = open(sys.argv[3],'rb').read()[0:16]
     
     firmware_with_version = decoded_firmware[0:0x2000] + version_info + decoded_firmware[0x2000:]
