@@ -24,12 +24,12 @@ Exposed pins
 | PA6  |            |
 | PA7  |            |
 | PA8  |            |
-| PA9  |            |
+| PA9  | Battery voltage ADC (SARADC_CH04) |
 | PA10 | I2C_SCL for EEPROM and BK1080 |
 | PA11 | I2C_SDA for EEPROM and BK1080 |
 | PA12 |            |
 | PA13 |            |
-| PA14 |            |
+| PA14 | Unknown Analog value (SARADC_CH09) |
 
 
 
