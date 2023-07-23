@@ -87,4 +87,23 @@ Script just reboots device. Command not produce any output in normal situation. 
 <hr>
 
 
+### `batt_calibrator.py`
+Arguments:
+```
+batt_calibrator.py <COMx> <read | write  val0 val1 val2 val3 val4 val5 | calibrate>
+```
+
+To calibrate ADC so battery voltage display more accurately invoke `batt_calibrator.py COM1 calibrate` like below:
+```
+> batt_calibrator.py COM1 calibrate
+Enter voltage from multimeter and press enter: 7.68
+```
+now follow steps: 
+- connect radio to PC
+- lay your radio with display to the bottom and battery up
+- measure voltage on two exposed pad on bottom of the battery
+- wait till voltage stabilizes
+- write measuder voltage in format `1.23` or `1,23` it shoudl not matter
+- hit enter
+- reboot radio
 
