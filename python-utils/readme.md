@@ -96,10 +96,11 @@ batt_calibrator.py <COMx> <read | write  val0 val1 val2 val3 val4 val5 | calibra
 To calibrate ADC so battery voltage display more accurately invoke `batt_calibrator.py COM1 calibrate` like below:
 ```
 > batt_calibrator.py COM1 calibrate
-Enter voltage from multimeter and press enter: 7.68
+Enter voltage from multimeter and press enter:
 ```
 now follow steps: 
 - connect radio to PC
+- power on radio
 - lay your radio with display to the bottom and battery up
 - measure voltage on two exposed pad on bottom of the battery
 - wait till voltage stabilizes
@@ -107,3 +108,6 @@ now follow steps:
 - hit enter
 - reboot radio
 
+You can backup current calibration values by starting `batt_calibrator.py COM1 read`
+
+To read more about values and its meaning please refer to [documentation](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/blob/main/docs/cfg_mem_map.md#battery-calibration-area).
