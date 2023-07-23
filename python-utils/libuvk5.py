@@ -81,6 +81,7 @@ class uvk5:
         self.CMD_REBOOT       = b'\xDD\x05' #0x05DD -> no reply
         self.CMD_0530         = b'\x30\x05' #0x0530 -> no reply //Only in bootloader
         self.CMD_0527         = b'\x27\x05'
+        self.CMD_0529         = b'\x29\x05'
         
         self.debug = False if os.getenv('DEBUG') is None else True
 
@@ -221,3 +222,13 @@ class uvk5:
         rssi,noise,glitch = struct.unpack('<HBB',reply[8:-4])
         rssi = rssi / 2 - 160
         return {'rssi':rssi, 'noise':noise, 'glitch':glitch, 'raw':reply[8:-4].hex()}
+
+
+    def get_adc(self):
+        cmd = self.CMD_0529 + struct.pack('<H',4) + self.sessTimestamp
+        cmd_crc = struct.pack('<H',crc16_ccitt(cmd))
+        cmd = b'\xAB\xCD' + struct.pack('<H',8) + cmd + cmd_crc + b'\xDC\xBA'
+        self.uart_send_msg(cmd)
+        reply = self.uart_receive_msg(16)
+        reply = struct.unpack('<HH',reply[8:-4])
+        return reply

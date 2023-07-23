@@ -16,5 +16,5 @@ with libuvk5.uvk5(arg_port) as radio:
         calib_coef = struct.unpack('<6H',calib_data)[3]
         while True:
             x = radio.get_adc()
-            print('{:.4f} V | RAW={}'.format(760*x[0]/calib_coef/100, x[0]))
+            print('{:.4f} V (RAW={})  | Charging (RAW={})'.format(760*x[0]/calib_coef/100, x[0], x[1]))
             time.sleep(0.2)
