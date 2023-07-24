@@ -1,5 +1,5 @@
 # nothing to configure here
-# mod changes frequency range of FM RADIO from 76–108 MHz to 88-108MHz (untested)
+# mod changes frequency range of FM RADIO from 76–108 MHz to 88-108MHz (tested by @DO7OO but no warranty anyway)
 
 
 ##--------------------- do not modify below this line ---------------------------------------------------
