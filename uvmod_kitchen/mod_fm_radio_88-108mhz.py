@@ -11,7 +11,7 @@ fw =  bytearray(open(sys.argv[1],'rb').read())
 
 
 fw[0xA274:0xA274+4] = b"\x5F\x0A\x00\x00"  # Reg05 = 0x0A5F    -> SEEK_TH[15:8]; BAND[7:6]; SPACE[5:4]; VOLUME[3:0], @DO7OO said that you can change rise SEEK_TH from 0x0A to 0x20 to lower sensitivity.
-                                                               -> Value depends on antenna your are using. 
+                                                              #-> Value depends on antenna your are using. 
 fw[0x6452:0x6452+4] = b"\x6e\x20\xC0\x00"  # MOVS R0, #760     -> MOVS R0, #880 - FM LOW LIMIT
 
 
