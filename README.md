@@ -57,6 +57,8 @@ All files from table are already encoded and can be directly flashed using firmw
 * Official UV-K5(8) aka UV-K6 support page: [Chinese](http://qsfj.com/support/downloads/3268) | [English](http://en.qsfj.com/support/downloads/3268)
 * Official UV-K5(8) aka UV-K6 product page: [Chinese](http://qsfj.com/products/3268)          | [English](http://en.qsfj.com/products/3268)
 * [FCC Reports](https://fcc.id/XBPUV-K5) / [fcc.gov](https://apps.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&RequestTimeout=500&calledFromFrame=Y&application_id=8sqkxgC%2F1cYNHF0lGkSAwA%3D%3D&fcc_id=XBPUV-K5)
+* [DP32G030 Product page](https://dnsj88.com/dp32g030lq32)
+* [DP32G030 Datasheet](https://dnsj88.com/filedownload/493463)
 * [Google Drive folder with useful info](https://drive.google.com/drive/folders/1NmcPb5yl5jnz7uWBO-c4B89XYL5AZeHw)
 * Facebook - [Quansheng Electronics Co., Ltd.](https://www.facebook.com/QuanshengRadios/)
 * Facebook - [Quansheng UV-K5 User's Group](https://www.facebook.com/groups/229333669483573/)
