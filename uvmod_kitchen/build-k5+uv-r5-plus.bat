@@ -1,9 +1,10 @@
+@echo off
 @rmdir /q /s temp 2>NUL
 @mkdir temp
 
-rem python qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
-python qsfirm.py unpack uv_k5_26_rssi_sbar_encoded_v60.bin temp\fw.dec.bin temp\fw.ver.bin
+@echo Extracting firmare..
 
+python qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
 
 :: mods by https://github.com/piotr022
 :: please choose only one of them and always 
@@ -34,14 +35,18 @@ rem python mod_enable_tx_50to850.py temp\fw.dec.bin
 rem python mod_enable_tx_50to850_except_airband.py temp\fw.dec.bin
 rem python mod_change_tx_limits.py temp\fw.dec.bin
 rem python mod_menu_strings.py temp\fw.dec.bin
-    python mod_custom_bootscreen_narrow_pmr446.py temp\fw.dec.bin
 rem python mod_enable_swd_port.py temp\fw.dec.bin
 python mod_enable_am_everywhere.py temp\fw.dec.bin
 python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
+
+@echo Repacking firmware for Uv-K5 ,Uv-K5(8)...
 python qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin
+
 
 python mod_change_version_to_uv-5r_plus.py temp\fw.dec.bin
 python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
+@echo Repacking firmware for UV-5R Plus...
+
 python qsfirm.py pack temp\fw.dec.bin fw.veruv5rplus.bin uv-r5_v4.00.26_MODDED.bin
 
 
