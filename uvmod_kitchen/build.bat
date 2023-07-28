@@ -1,6 +1,8 @@
+@echo off
 @rmdir /q /s temp 2>NUL
 @mkdir temp
 
+@echo Extracting firmare...
 python qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
 
 
@@ -42,5 +44,6 @@ python mod_roger_mototrbo_like.py temp\fw.dec.bin
 
 :: end of mods
 
+@echo Repacking firmware...
 python qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin
 
