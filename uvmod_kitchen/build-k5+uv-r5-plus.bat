@@ -39,15 +39,17 @@ rem python mod_enable_swd_port.py temp\fw.dec.bin
 python mod_enable_am_everywhere.py temp\fw.dec.bin
 python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
 
-@echo Repacking firmware for Uv-K5 ,Uv-K5(8)...
+@echo [32mRepacking firmware for UV-K5 ,UV-K5(8)...[0m
+
 python qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin
 
 
 python mod_change_version_to_uv-5r_plus.py temp\fw.dec.bin
 python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
-@echo Repacking firmware for UV-5R Plus...
+@echo [32mRepacking firmware for UV-5R Plus...[0m
 
 python qsfirm.py pack temp\fw.dec.bin fw.veruv5rplus.bin uv-r5_v4.00.26_MODDED.bin
+
 
 
 :: end of mods
