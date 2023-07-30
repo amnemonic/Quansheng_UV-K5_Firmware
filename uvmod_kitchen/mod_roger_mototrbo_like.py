@@ -11,8 +11,8 @@ fw =  bytearray(open(sys.argv[1],'rb').read())
 
 if fw[0xaed0:0xaed0+4] == struct.pack('<I',0x142a) and fw[0xaed4:0xaed4+4] == struct.pack('<I',0x1c3b):
     print('Changing roger beep tones...')
-    fw[0xaed0:0xaed0+4] = struct.pack('<I',0x3e1c)
-    fw[0xaed4:0xaed4+4] = struct.pack('<I',0x34d5)
+    fw[0xaed0:0xaed0+4] = struct.pack('<I',tone1)
+    fw[0xaed4:0xaed4+4] = struct.pack('<I',tone2)
     fw[0xae9a] = 0x96
 else:
     print('ERROR: Cant find function')
