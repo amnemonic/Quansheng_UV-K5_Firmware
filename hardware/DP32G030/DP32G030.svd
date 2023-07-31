@@ -12,12 +12,19 @@
   <size>0x20</size>
   <resetValue>0x0</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
-  <peripherals>
 
+  <cpu>
+    <name>CM0</name> 
+    <revision>r0p0</revision>
+    <endian>little</endian>
+    <nvicPrioBits>4</nvicPrioBits>
+  </cpu>
+
+  <peripherals>
     <peripheral>
       <name>SYSCON</name>
       <description>System Configuration unit</description>
-      <groupName>SYSCON</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40000000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -40,9 +47,9 @@
     <peripheral>
       <name>PMU</name>
       <description>Power management unit</description>
-      <groupName>PMU</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40000800</baseAddress>
-      <addressBlock> 
+      <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -70,7 +77,7 @@
     <peripheral>
       <name>DMA</name>
       <description>DMA unit</description>
-      <groupName>DMA</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40001000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -94,7 +101,7 @@
     <peripheral>
       <name>CRC</name>
       <description>Cyclic redundancy check calculation unit</description>
-      <groupName>CRC</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40003000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -110,7 +117,7 @@
     <peripheral> <!-- Page 119 -->
       <name>GPIOA</name>
       <description>GPIOA unit</description>
-      <groupName>GPIOA</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40060000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -130,7 +137,7 @@
     <peripheral>
       <name>GPIOB</name>
       <description>GPIOB unit</description>
-      <groupName>GPIOB</groupName>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40060800</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -149,9 +156,8 @@
     </peripheral>
     <peripheral>
       <name>GPIOC</name>
-      <description>GPIOC
-      unit</description>
-      <groupName>GPIOC</groupName>
+      <description>GPIOC unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40061000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -169,584 +175,545 @@
       </registers>
     </peripheral>
 
-    <peripheral> <!--TIMER_BASE0-->
+    <peripheral>
       <name>TIMER_BASE0</name>
-      <description>TIMER_BASE0
-      unit</description>
-      <groupName>TIMER_BASE0</groupName>
+      <description>TIMER_BASE0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40064000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--TIMERBASE0_EN--><name>TIMERBASE0_EN</name><displayName>TIMERBASE0_EN</displayName><description>TIMER enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE0_DIV--><name>TIMERBASE0_DIV</name><displayName>TIMERBASE0_DIV</displayName><description>TIMER Count Clock Divider Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE0_IE--><name>TIMERBASE0_IE</name><displayName>TIMERBASE0_IE</displayName><description>TIMERinterrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE0_IF--><name>TIMERBASE0_IF</name><displayName>TIMERBASE0_IF</displayName><description>TIMER Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE0_HIGH_LOAD--><name>TIMERBASE0_HIGH_LOAD</name><displayName>TIMERBASE0_HIGH_LOAD</displayName><description>TIMER HIGH target configuration register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE0_HIGH_CNT--><name>TIMERBASE0_HIGH_CNT</name><displayName>TIMERBASE0_HIGH_CNT</displayName><description>TIMER HIGH Current count value register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE0_LOW_LOAD--><name>TIMERBASE0_LOW_LOAD</name><displayName>TIMERBASE0_LOW_LOAD</displayName><description>TIMER LOW target configuration register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE0_LOW_CNT--><name>TIMERBASE0_LOW_CNT</name><displayName>TIMERBASE0_LOW_CNT</displayName><description>TIMER LOW Current count value register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>TIMERBASE0_EN</name>         <description>TIMER enable register</description>                     <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE0_DIV</name>        <description>TIMER Count Clock Divider Register</description>        <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE0_IE</name>         <description>TIMERinterrupt enable register</description>            <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE0_IF</name>         <description>TIMER Interrupt Status Register</description>           <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE0_HIGH_LOAD</name>  <description>TIMER HIGH target configuration register</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE0_HIGH_CNT</name>   <description>TIMER HIGH Current count value register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE0_LOW_LOAD</name>   <description>TIMER LOW target configuration register</description>   <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE0_LOW_CNT</name>    <description>TIMER LOW Current count value register</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--TIMER_BASE1-->
+    <peripheral>
       <name>TIMER_BASE1</name>
-      <description>TIMER_BASE1
-      unit</description>
-      <groupName>TIMER_BASE1</groupName>
+      <description>TIMER_BASE1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40064800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--TIMERBASE1_EN--><name>TIMERBASE1_EN</name><displayName>TIMERBASE1_EN</displayName><description>TIMER enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE1_DIV--><name>TIMERBASE1_DIV</name><displayName>TIMERBASE1_DIV</displayName><description>TIMER Count Clock Divider Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE1_IE--><name>TIMERBASE1_IE</name><displayName>TIMERBASE1_IE</displayName><description>TIMERinterrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE1_IF--><name>TIMERBASE1_IF</name><displayName>TIMERBASE1_IF</displayName><description>TIMER Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE1_HIGH_LOAD--><name>TIMERBASE1_HIGH_LOAD</name><displayName>TIMERBASE1_HIGH_LOAD</displayName><description>TIMER HIGH target configuration register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE1_HIGH_CNT--><name>TIMERBASE1_HIGH_CNT</name><displayName>TIMERBASE1_HIGH_CNT</displayName><description>TIMER HIGH Current count value register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE1_LOW_LOAD--><name>TIMERBASE1_LOW_LOAD</name><displayName>TIMERBASE1_LOW_LOAD</displayName><description>TIMER LOW target configuration register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE1_LOW_CNT--><name>TIMERBASE1_LOW_CNT</name><displayName>TIMERBASE1_LOW_CNT</displayName><description>TIMER LOW Current count value register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>TIMERBASE1_EN</name>         <description>TIMER enable register</description>                     <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE1_DIV</name>        <description>TIMER Count Clock Divider Register</description>        <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE1_IE</name>         <description>TIMERinterrupt enable register</description>            <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE1_IF</name>         <description>TIMER Interrupt Status Register</description>           <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE1_HIGH_LOAD</name>  <description>TIMER HIGH target configuration register</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE1_HIGH_CNT</name>   <description>TIMER HIGH Current count value register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE1_LOW_LOAD</name>   <description>TIMER LOW target configuration register</description>   <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE1_LOW_CNT</name>    <description>TIMER LOW Current count value register</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--TIMER_BASE2-->
+    <peripheral>
       <name>TIMER_BASE2</name>
-      <description>TIMER_BASE2
-      unit</description>
-      <groupName>TIMER_BASE2</groupName>
+      <description>TIMER_BASE2 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40065000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--TIMERBASE2_EN--><name>TIMERBASE2_EN</name><displayName>TIMERBASE2_EN</displayName><description>TIMER enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE2_DIV--><name>TIMERBASE2_DIV</name><displayName>TIMERBASE2_DIV</displayName><description>TIMER Count Clock Divider Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE2_IE--><name>TIMERBASE2_IE</name><displayName>TIMERBASE2_IE</displayName><description>TIMERinterrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE2_IF--><name>TIMERBASE2_IF</name><displayName>TIMERBASE2_IF</displayName><description>TIMER Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE2_HIGH_LOAD--><name>TIMERBASE2_HIGH_LOAD</name><displayName>TIMERBASE2_HIGH_LOAD</displayName><description>TIMER HIGH target configuration register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE2_HIGH_CNT--><name>TIMERBASE2_HIGH_CNT</name><displayName>TIMERBASE2_HIGH_CNT</displayName><description>TIMER HIGH Current count value register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERBASE2_LOW_LOAD--><name>TIMERBASE2_LOW_LOAD</name><displayName>TIMERBASE2_LOW_LOAD</displayName><description>TIMER LOW target configuration register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERBASE2_LOW_CNT--><name>TIMERBASE2_LOW_CNT</name><displayName>TIMERBASE2_LOW_CNT</displayName><description>TIMER LOW Current count value register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>TIMERBASE2_EN</name>         <description>TIMER enable register</description>                     <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE2_DIV</name>        <description>TIMER Count Clock Divider Register</description>        <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE2_IE</name>         <description>TIMERinterrupt enable register</description>            <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE2_IF</name>         <description>TIMER Interrupt Status Register</description>           <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE2_HIGH_LOAD</name>  <description>TIMER HIGH target configuration register</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE2_HIGH_CNT</name>   <description>TIMER HIGH Current count value register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>TIMERBASE2_LOW_LOAD</name>   <description>TIMER LOW target configuration register</description>   <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>TIMERBASE2_LOW_CNT</name>    <description>TIMER LOW Current count value register</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--TIMER_PLUS0-->
+
+    <peripheral>
       <name>TIMER_PLUS0</name>
-      <description>TIMER_PLUS0
-      unit</description>
-      <groupName>TIMER_PLUS0</groupName>
+      <description>TIMER_PLUS0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40067000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--TIMERPLUS0_EN--><name>TIMERPLUS0_EN</name><displayName>TIMERPLUS0_EN</displayName><description>TIMERPLUS enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_DIV--><name>TIMERPLUS0_DIV</name><displayName>TIMERPLUS0_DIV</displayName><description>TIMERPLUS Count Clock Prescaler Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_CTR--><name>TIMERPLUS0_CTR</name><displayName>TIMERPLUS0_CTR</displayName><description>TIMERPLUS configuration register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x600060</resetValue></register>
-        <register> <!--TIMERPLUS0_IE--><name>TIMERPLUS0_IE</name><displayName>TIMERPLUS0_IE</displayName><description>TIMERPLUS interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_IF--><name>TIMERPLUS0_IF</name><displayName>TIMERPLUS0_IF</displayName><description>TIMERPLUS Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_HIGH_GOAL--><name>TIMERPLUS0_HIGH_GOAL</name><displayName>TIMERPLUS0_HIGH_GOAL</displayName><description>TIMERPLUS HIGH target configuration register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERPLUS0_HIGH_CNT--><name>TIMERPLUS0_HIGH_CNT</name><displayName>TIMERPLUS0_HIGH_CNT</displayName><description>TIMERPLUS HIGH Current count value register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_HIGH_CVAL--><name>TIMERPLUS0_HIGH_CVAL</name><displayName>TIMERPLUS0_HIGH_CVAL</displayName><description>TIMERPLUS HIGH capture value register</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_LOW_GOAL--><name>TIMERPLUS0_LOW_GOAL</name><displayName>TIMERPLUS0_LOW_GOAL</displayName><description>TIMERPLUS LOW target configuration register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERPLUS0_LOW_CNT--><name>TIMERPLUS0_LOW_CNT</name><displayName>TIMERPLUS0_LOW_CNT</displayName><description>TIMERPLUS LOW Current count value register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_LOW_CVAL--><name>TIMERPLUS0_LOW_CVAL</name><displayName>TIMERPLUS0_LOW_CVAL</displayName><description>TIMERPLUS HIGH capture value register</description><addressOffset>0x38</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS0_HALL_VAL--><name>TIMERPLUS0_HALL_VAL</name><displayName>TIMERPLUS0_HALL_VAL</displayName><description>HALL Signal Raw Value Register</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>TIMERPLUS0_EN</name>         <description>TIMERPLUS enable register</description>                     <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>TIMERPLUS0_DIV</name>        <description>TIMERPLUS Count Clock Prescaler Register</description>      <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>TIMERPLUS0_CTR</name>        <description>TIMERPLUS configuration register</description>              <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x600060</resetValue></register>
+        <register>  <name>TIMERPLUS0_IE</name>         <description>TIMERPLUS interrupt enable register</description>           <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_IF</name>         <description>TIMERPLUS Interrupt Status Register</description>           <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_HIGH_GOAL</name>  <description>TIMERPLUS HIGH target configuration register</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue>  </register>
+        <register>  <name>TIMERPLUS0_HIGH_CNT</name>   <description>TIMERPLUS HIGH Current count value register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_HIGH_CVAL</name>  <description>TIMERPLUS HIGH capture value register</description>         <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_LOW_GOAL</name>   <description>TIMERPLUS LOW target configuration register</description>   <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue>  </register>
+        <register>  <name>TIMERPLUS0_LOW_CNT</name>    <description>TIMERPLUS LOW Current count value register</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_LOW_CVAL</name>   <description>TIMERPLUS HIGH capture value register</description>         <addressOffset>0x38</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS0_HALL_VAL</name>   <description>HALL Signal Raw Value Register</description>                <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
       </registers>
     </peripheral>
-    <peripheral> <!--TIMER_PLUS1-->
+    <peripheral>
       <name>TIMER_PLUS1</name>
-      <description>TIMER_PLUS1
-      unit</description>
-      <groupName>TIMER_PLUS1</groupName>
+      <description>TIMER_PLUS1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40067800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--TIMERPLUS1_EN--><name>TIMERPLUS1_EN</name><displayName>TIMERPLUS1_EN</displayName><description>TIMERPLUS enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_DIV--><name>TIMERPLUS1_DIV</name><displayName>TIMERPLUS1_DIV</displayName><description>TIMERPLUS Count Clock Prescaler Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_CTR--><name>TIMERPLUS1_CTR</name><displayName>TIMERPLUS1_CTR</displayName><description>TIMERPLUS configuration register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x600060</resetValue></register>
-        <register> <!--TIMERPLUS1_IE--><name>TIMERPLUS1_IE</name><displayName>TIMERPLUS1_IE</displayName><description>TIMERPLUS interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_IF--><name>TIMERPLUS1_IF</name><displayName>TIMERPLUS1_IF</displayName><description>TIMERPLUS Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_HIGH_GOAL--><name>TIMERPLUS1_HIGH_GOAL</name><displayName>TIMERPLUS1_HIGH_GOAL</displayName><description>TIMERPLUS HIGH target configuration register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERPLUS1_HIGH_CNT--><name>TIMERPLUS1_HIGH_CNT</name><displayName>TIMERPLUS1_HIGH_CNT</displayName><description>TIMERPLUS HIGH Current count value register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_HIGH_CVAL--><name>TIMERPLUS1_HIGH_CVAL</name><displayName>TIMERPLUS1_HIGH_CVAL</displayName><description>TIMERPLUS HIGH capture value register</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_LOW_GOAL--><name>TIMERPLUS1_LOW_GOAL</name><displayName>TIMERPLUS1_LOW_GOAL</displayName><description>TIMERPLUS LOW target configuration register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--TIMERPLUS1_LOW_CNT--><name>TIMERPLUS1_LOW_CNT</name><displayName>TIMERPLUS1_LOW_CNT</displayName><description>TIMERPLUS LOW Current count value register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_LOW_CVAL--><name>TIMERPLUS1_LOW_CVAL</name><displayName>TIMERPLUS1_LOW_CVAL</displayName><description>TIMERPLUS HIGH capture value register</description><addressOffset>0x38</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--TIMERPLUS1_HALL_VAL--><name>TIMERPLUS1_HALL_VAL</name><displayName>TIMERPLUS1_HALL_VAL</displayName><description>HALL Signal Raw Value Register</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>TIMERPLUS1_EN</name>         <description>TIMERPLUS enable register</description>                   <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_DIV</name>        <description>TIMERPLUS Count Clock Prescaler Register</description>    <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_CTR</name>        <description>TIMERPLUS configuration register</description>            <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x600060</resetValue></register>
+        <register>  <name>TIMERPLUS1_IE</name>         <description>TIMERPLUS interrupt enable register</description>         <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_IF</name>         <description>TIMERPLUS Interrupt Status Register</description>         <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_HIGH_GOAL</name>  <description>TIMERPLUS HIGH target configuration register</description><addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue>  </register>
+        <register>  <name>TIMERPLUS1_HIGH_CNT</name>   <description>TIMERPLUS HIGH Current count value register</description> <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_HIGH_CVAL</name>  <description>TIMERPLUS HIGH capture value register</description>       <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_LOW_GOAL</name>   <description>TIMERPLUS LOW target configuration register</description> <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue>  </register>
+        <register>  <name>TIMERPLUS1_LOW_CNT</name>    <description>TIMERPLUS LOW Current count value register</description>  <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_LOW_CVAL</name>   <description>TIMERPLUS HIGH capture value register</description>       <addressOffset>0x38</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
+        <register>  <name>TIMERPLUS1_HALL_VAL</name>   <description>HALL Signal Raw Value Register</description>              <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>    </register>
       </registers>
     </peripheral>
-    <peripheral> <!--RTC-->
+
+    <peripheral>
       <name>RTC</name>
-      <description>RTC
-      unit</description>
-      <groupName>RTC</groupName>
+      <description>RTC unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x40069000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--RTC_CFG--><name>RTC_CFG</name><displayName>RTC_CFG</displayName><description>RTCconfiguration register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_IE--><name>RTC_IE</name><displayName>RTC_IE</displayName><description>RTC interrupt enable register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_IF--><name>RTC_IF</name><displayName>RTC_IF</displayName><description>RTC status register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_PRE--><name>RTC_PRE</name><displayName>RTC_PRE</displayName><description>RTC prescaler register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x7FFF</resetValue></register>
-        <register> <!--RTC_TR--><name>RTC_TR</name><displayName>RTC_TR</displayName><description>RTC time register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_DR--><name>RTC_DR</name><displayName>RTC_DR</displayName><description>RTCdate register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x101</resetValue></register>
-        <register> <!--RTC_AR--><name>RTC_AR</name><displayName>RTC_AR</displayName><description>RTC alarm clock register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_TSTR--><name>RTC_TSTR</name><displayName>RTC_TSTR</displayName><description>RTC current time register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_TSDR--><name>RTC_TSDR</name><displayName>RTC_TSDR</displayName><description>RTCcurrent date register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x101</resetValue></register>
-        <register> <!--RTC_CNT--><name>RTC_CNT</name><displayName>RTC_CNT</displayName><description>RTC current count value of the second scale</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--RTC_VALID--><name>RTC_VALID</name><displayName>RTC_VALID</displayName><description>RTC Current Time Valid Flag Register</description><addressOffset>0x2C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>RTC_CFG</name>    <description>RTCconfiguration register</description>                   <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_IE</name>     <description>RTC interrupt enable register</description>               <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_IF</name>     <description>RTC status register</description>                         <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_PRE</name>    <description>RTC prescaler register</description>                      <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x7FFF</resetValue></register>
+        <register>  <name>RTC_TR</name>     <description>RTC time register</description>                           <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_DR</name>     <description>RTCdate register</description>                            <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x101</resetValue> </register>
+        <register>  <name>RTC_AR</name>     <description>RTC alarm clock register</description>                    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_TSTR</name>   <description>RTC current time register</description>                   <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_TSDR</name>   <description>RTCcurrent date register</description>                    <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x101</resetValue> </register>
+        <register>  <name>RTC_CNT</name>    <description>RTC current count value of the second scale</description> <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>RTC_VALID</name>  <description>RTC Current Time Valid Flag Register</description>        <addressOffset>0x2C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--IWDT-->
+
+    <peripheral>
       <name>IWDT</name>
-      <description>IWDT
-      unit</description>
+      <description>IWDT unit</description>
       <groupName>IWDT</groupName>
       <baseAddress>0x4006A000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--IWDT_LOAD--><name>IWDT_LOAD</name><displayName>IWDT_LOAD</displayName><description>IWDT initial value register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--IWDT_CTRL--><name>IWDT_CTRL</name><displayName>IWDT_CTRL</displayName><description>IWDT control register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IWDT_IF--><name>IWDT_IF</name><displayName>IWDT_IF</displayName><description>IWDT status register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IWDT_FEED--><name>IWDT_FEED</name><displayName>IWDT_FEED</displayName><description>IWDT feeding dog register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>IWDT_LOAD</name>  <description>IWDT initial value register</description> <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>IWDT_CTRL</name>  <description>IWDT control register</description>       <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>IWDT_IF</name>    <description>IWDT status register</description>        <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>IWDT_FEED</name>  <description>IWDT feeding dog register</description>   <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--WWDT-->
+
+    <peripheral>
       <name>WWDT</name>
-      <description>WWDT
-      unit</description>
-      <groupName>WWDT</groupName>
+      <description>WWDT unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x4006A800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--WWDT_LOAD--><name>WWDT_LOAD</name><displayName>WWDT_LOAD</displayName><description>WWDT initial value register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x40</resetValue></register>
-        <register> <!--WWDT_VALUE--><name>WWDT_VALUE</name><displayName>WWDT_VALUE</displayName><description>WWDT Current count value register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x7F</resetValue></register>
-        <register> <!--WWDT_CTRL--><name>WWDT_CTRL</name><displayName>WWDT_CTRL</displayName><description>WWDT control register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--WWDT_IF--><name>WWDT_IF</name><displayName>WWDT_IF</displayName><description>WWDT Interrupt Status Register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--WWDT_FEED--><name>WWDT_FEED</name><displayName>WWDT_FEED</displayName><description>WWDT feeding dog register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>WWDT_LOAD</name>   <description>WWDT initial value register</description>       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x40</resetValue> </register>
+        <register>  <name>WWDT_VALUE</name>  <description>WWDT Current count value register</description> <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x7F</resetValue> </register>
+        <register>  <name>WWDT_CTRL</name>   <description>WWDT control register</description>             <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>WWDT_IF</name>     <description>WWDT Interrupt Status Register</description>    <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>WWDT_FEED</name>   <description>WWDT feeding dog register</description>         <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
       </registers>
     </peripheral>
-    <peripheral> <!--UART0-->
+
+    <peripheral>
       <name>UART0</name>
-      <description>UART0
-      unit</description>
-      <groupName>UART0</groupName>
+      <description>UART0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x4006B000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--UART0_CTRL--><name>UART0_CTRL</name><displayName>UART0_CTRL</displayName><description>UART control register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_BAUD--><name>UART0_BAUD</name><displayName>UART0_BAUD</displayName><description>UART Baud Rate Configuration Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_TDR--><name>UART0_TDR</name><displayName>UART0_TDR</displayName><description>UART write data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_RDR--><name>UART0_RDR</name><displayName>UART0_RDR</displayName><description>UART read data register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_IE--><name>UART0_IE</name><displayName>UART0_IE</displayName><description>UART interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_IF--><name>UART0_IF</name><displayName>UART0_IF</displayName><description>UART Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x2400</resetValue></register>
-        <register> <!--UART0_FIFO--><name>UART0_FIFO</name><displayName>UART0_FIFO</displayName><description>UART FIFO control register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x07</resetValue></register>
-        <register> <!--UART0_FC--><name>UART0_FC</name><displayName>UART0_FC</displayName><description>UART Flow Control Configuration Register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART0_RXTO--><name>UART0_RXTO</name><displayName>UART0_RXTO</displayName><description>UART Receive Timeout Configuration Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFF</resetValue></register>
+        <register>  <name>UART0_CTRL</name>  <description>UART control register</description>                       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_BAUD</name>  <description>UART Baud Rate Configuration Register</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_TDR</name>   <description>UART write data register</description>                    <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_RDR</name>   <description>UART read data register</description>                     <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_IE</name>    <description>UART interrupt enable register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_IF</name>    <description>UART Interrupt Status Register</description>              <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x2400</resetValue></register>
+        <register>  <name>UART0_FIFO</name>  <description>UART FIFO control register</description>                  <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x07</resetValue>  </register>
+        <register>  <name>UART0_FC</name>    <description>UART Flow Control Configuration Register</description>    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART0_RXTO</name>  <description>UART Receive Timeout Configuration Register</description> <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFF</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--UART1-->
+    <peripheral>
       <name>UART1</name>
-      <description>UART1
-      unit</description>
-      <groupName>UART1</groupName>
+      <description>UART1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x4006B800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--UART1_CTRL--><name>UART1_CTRL</name><displayName>UART1_CTRL</displayName><description>UART control register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_BAUD--><name>UART1_BAUD</name><displayName>UART1_BAUD</displayName><description>UART Baud Rate Configuration Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_TDR--><name>UART1_TDR</name><displayName>UART1_TDR</displayName><description>UART write data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_RDR--><name>UART1_RDR</name><displayName>UART1_RDR</displayName><description>UART read data register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_IE--><name>UART1_IE</name><displayName>UART1_IE</displayName><description>UART interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_IF--><name>UART1_IF</name><displayName>UART1_IF</displayName><description>UART Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x2400</resetValue></register>
-        <register> <!--UART1_FIFO--><name>UART1_FIFO</name><displayName>UART1_FIFO</displayName><description>UART FIFO control register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x07</resetValue></register>
-        <register> <!--UART1_FC--><name>UART1_FC</name><displayName>UART1_FC</displayName><description>UART Flow Control Configuration Register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART1_RXTO--><name>UART1_RXTO</name><displayName>UART1_RXTO</displayName><description>UART Receive Timeout Configuration Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFF</resetValue></register>
+        <register>  <name>UART1_CTRL</name>  <description>UART control register</description>                       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_BAUD</name>  <description>UART Baud Rate Configuration Register</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_TDR</name>   <description>UART write data register</description>                    <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_RDR</name>   <description>UART read data register</description>                     <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_IE</name>    <description>UART interrupt enable register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_IF</name>    <description>UART Interrupt Status Register</description>              <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x2400</resetValue></register>
+        <register>  <name>UART1_FIFO</name>  <description>UART FIFO control register</description>                  <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x07</resetValue>  </register>
+        <register>  <name>UART1_FC</name>    <description>UART Flow Control Configuration Register</description>    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART1_RXTO</name>  <description>UART Receive Timeout Configuration Register</description> <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFF</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--UART2-->
+    <peripheral>
       <name>UART2</name>
-      <description>UART2
-      unit</description>
-      <groupName>UART2</groupName>
+      <description>UART2 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x4006C000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--UART2_CTRL--><name>UART2_CTRL</name><displayName>UART2_CTRL</displayName><description>UART control register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_BAUD--><name>UART2_BAUD</name><displayName>UART2_BAUD</displayName><description>UART Baud Rate Configuration Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_TDR--><name>UART2_TDR</name><displayName>UART2_TDR</displayName><description>UART write data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_RDR--><name>UART2_RDR</name><displayName>UART2_RDR</displayName><description>UART read data register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_IE--><name>UART2_IE</name><displayName>UART2_IE</displayName><description>UART interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_IF--><name>UART2_IF</name><displayName>UART2_IF</displayName><description>UART Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x2400</resetValue></register>
-        <register> <!--UART2_FIFO--><name>UART2_FIFO</name><displayName>UART2_FIFO</displayName><description>UART FIFO control register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x07</resetValue></register>
-        <register> <!--UART2_FC--><name>UART2_FC</name><displayName>UART2_FC</displayName><description>UART Flow Control Configuration Register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--UART2_RXTO--><name>UART2_RXTO</name><displayName>UART2_RXTO</displayName><description>UART Receive Timeout Configuration Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0xFF</resetValue></register>
+        <register>  <name>UART2_CTRL</name>  <description>UART control register</description>                       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_BAUD</name>  <description>UART Baud Rate Configuration Register</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_TDR</name>   <description>UART write data register</description>                    <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_RDR</name>   <description>UART read data register</description>                     <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_IE</name>    <description>UART interrupt enable register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_IF</name>    <description>UART Interrupt Status Register</description>              <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x2400</resetValue></register>
+        <register>  <name>UART2_FIFO</name>  <description>UART FIFO control register</description>                  <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x07</resetValue>  </register>
+        <register>  <name>UART2_FC</name>    <description>UART Flow Control Configuration Register</description>    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>UART2_RXTO</name>  <description>UART Receive Timeout Configuration Register</description> <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0xFF</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--FLASH_CTRL-->
+
+    <peripheral>
       <name>FLASH_CTRL</name>
-      <description>FLASH_CTRL
-      unit</description>
-      <groupName>FLASH_CTRL</groupName>
+      <description>FLASH_CTRL unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x4006F000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--FLASH_CFG--><name>FLASH_CFG</name><displayName>FLASH_CFG</displayName><description>Flash configuration register</description><addressOffset>0x0</addressOffset><size>0x20</size><resetValue>0x80000000</resetValue></register> 
-        <register> <!--FLASH_ADDR--><name>FLASH_ADDR</name><displayName>FLASH_ADDR</displayName><description>Flash Address Configuration Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_WDATA--><name>FLASH_WDATA</name><displayName>FLASH_WDATA</displayName><description>Flash write data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_RDATA--><name>FLASH_RDATA</name><displayName>FLASH_RDATA</displayName><description>Flash read data register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_START--><name>FLASH_START</name><displayName>FLASH_START</displayName><description>Flash Operation Start Register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_STATUS--><name>FLASH_STATUS</name><displayName>FLASH_STATUS</displayName><description>Flash status register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x5</resetValue></register> 
-        <register> <!--FLASH_LOCK--><name>FLASH_LOCK</name><displayName>FLASH_LOCK</displayName><description>Flash Operation Lock Control Register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_UNLOCK--><name>FLASH_UNLOCK</name><displayName>FLASH_UNLOCK</displayName><description>Flash Operation Unlock Control Register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x0</resetValue></register> 
-        <register> <!--FLASH_MASK--><name>FLASH_MASK</name><displayName>FLASH_MASK</displayName><description>Flash mask control register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x2</resetValue></register> 
-        <register> <!--FLASH_ERASETIME--><name>FLASH_ERASETIME</name><displayName>FLASH_ERASETIME</displayName><description>Flash Erase Time Parameter Configuration Register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x7532a31b</resetValue></register> 
-        <register> <!--FLASH_PROGTIME--><name>FLASH_PROGTIME</name><displayName>FLASH_PROGTIME</displayName><description>Flash Program Time Parameter Configuration Register</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x1f4360</resetValue></register> 
-	  </registers>	
+        <register>  <name>FLASH_CFG</name>        <description>Flash configuration register</description>                       <addressOffset>0x0</addressOffset> <size>0x20</size><resetValue>0x80000000</resetValue></register>
+        <register>  <name>FLASH_ADDR</name>       <description>Flash Address Configuration Register</description>               <addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_WDATA</name>      <description>Flash write data register</description>                          <addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_RDATA</name>      <description>Flash read data register</description>                           <addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_START</name>      <description>Flash Operation Start Register</description>                     <addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_STATUS</name>     <description>Flash status register</description>                              <addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x5</resetValue>       </register>
+        <register>  <name>FLASH_LOCK</name>       <description>Flash Operation Lock Control Register</description>              <addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_UNLOCK</name>     <description>Flash Operation Unlock Control Register</description>            <addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x0</resetValue>       </register>
+        <register>  <name>FLASH_MASK</name>       <description>Flash mask control register</description>                        <addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x2</resetValue>       </register>
+        <register>  <name>FLASH_ERASETIME</name>  <description>Flash Erase Time Parameter Configuration Register</description>  <addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x7532a31b</resetValue></register>
+        <register>  <name>FLASH_PROGTIME</name>   <description>Flash Program Time Parameter Configuration Register</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x1f4360</resetValue>  </register>
+    </registers>
     </peripheral>
-    <peripheral> <!--PORTCON-->
+
+    <peripheral>
       <name>PORTCON</name>
-      <description>PORTCON
-      unit</description>
-      <groupName>PORTCON</groupName>
+      <description>PORTCON unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B0000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--PORTA_SEL0--><name>PORTA_SEL0</name><displayName>PORTA_SEL0</displayName><description>PORTA Function Select Register0</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTA_SEL1--><name>PORTA_SEL1</name><displayName>PORTA_SEL1</displayName><description>PORTA Function Select Register1</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_SEL0--><name>PORTB_SEL0</name><displayName>PORTB_SEL0</displayName><description>PORTB Function Select Register0</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0xffff0000</resetValue></register>
-        <register> <!--PORTB_SEL1--><name>PORTB_SEL1</name><displayName>PORTB_SEL1</displayName><description>PORTB Function Select Register1</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x01001000</resetValue><fields><field><name>PORTB8</name><description>FUNCTION</description><bitOffset>0</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field><field><name>PORTB9</name><description>FUNCTION</description><bitOffset>4</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field><field><name>PORTB10</name><description>FUNCTION</description><bitOffset>8</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field><field><name>PORTB11</name><description>0001:SWDIO</description><bitOffset>12</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0x01</resetValue></field><field><name>PORTB12</name><description>FUNCTION</description><bitOffset>16</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field><field><name>PORTB13</name><description>FUNCTION</description><bitOffset>20</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field><field><name>PORTB14</name><description>0001:SWCLK</description><bitOffset>24</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0x01</resetValue></field><field><name>PORTB15</name><description>FUNCTION</description><bitOffset>28</bitOffset><bitWidth>4</bitWidth><access>read-write</access><resetValue>0</resetValue></field></fields></register>
-        <register> <!--PORTC_SEL0--><name>PORTC_SEL0</name><displayName>PORTC_SEL0</displayName><description>PORTC Function Select Register0</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTA_IE--><name>PORTA_IE</name><displayName>PORTA_IE</displayName><description>PORTA Input enable register</description><addressOffset>0x100</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_IE--><name>PORTB_IE</name><displayName>PORTB_IE</displayName><description>PORTB Input enable register</description><addressOffset>0x104</addressOffset><size>0x20</size><resetValue>0x4800</resetValue></register>
-        <register> <!--PORTC_IE--><name>PORTC_IE</name><displayName>PORTC_IE</displayName><description>PORTC Input enable register</description><addressOffset>0x108</addressOffset><size>0x20</size><resetValue>0x20</resetValue></register>
-        <register> <!--PORTA_PU--><name>PORTA_PU</name><displayName>PORTA_PU</displayName><description>PORTA pull-up enable register</description><addressOffset>0x200</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_PU--><name>PORTB_PU</name><displayName>PORTB_PU</displayName><description>PORTB pull-up enable register</description><addressOffset>0x204</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTC_PU--><name>PORTC_PU</name><displayName>PORTC_PU</displayName><description>PORTC pull-up enable register</description><addressOffset>0x208</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTA_PD--><name>PORTA_PD</name><displayName>PORTA_PD</displayName><description>PORTA pull-down enable register</description><addressOffset>0x300</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_PD--><name>PORTB_PD</name><displayName>PORTB_PD</displayName><description>PORTB pull-down enable register</description><addressOffset>0x304</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTC_PD--><name>PORTC_PD</name><displayName>PORTC_PD</displayName><description>PORTC pull-down enable register</description><addressOffset>0x308</addressOffset><size>0x20</size><resetValue>0x20</resetValue></register>
-        <register> <!--PORTA_OD--><name>PORTA_OD</name><displayName>PORTA_OD</displayName><description>PORTA Open Drain Enable Register</description><addressOffset>0x400</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_OD--><name>PORTB_OD</name><displayName>PORTB_OD</displayName><description>PORTB Open Drain Enable Register</description><addressOffset>0x404</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTC_OD--><name>PORTC_OD</name><displayName>PORTC_OD</displayName><description>PORTC Open Drain Enable Register</description><addressOffset>0x408</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTA_WKE--><name>PORTA_WKE</name><displayName>PORTA_WKE</displayName><description>PORTA wakeup enable register</description><addressOffset>0x500</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_WKE--><name>PORTB_WKE</name><displayName>PORTB_WKE</displayName><description>PORTB wakeup enable register</description><addressOffset>0x504</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTC_WKE--><name>PORTC_WKE</name><displayName>PORTC_WKE</displayName><description>PORTC wakeup enable register</description><addressOffset>0x508</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORT_CFG--><name>PORT_CFG</name><displayName>PORT_CFG</displayName><description>port configuration register</description><addressOffset>0x600</addressOffset><size>0x20</size><resetValue>0x15</resetValue></register>
-        <register> <!--PORTA_WK_SEL--><name>PORTA_WK_SEL</name><displayName>PORTA_WK_SEL</displayName><description>PORTA wakeIOedge selection register</description><addressOffset>0x700</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTB_WK_SEL--><name>PORTB_WK_SEL</name><displayName>PORTB_WK_SEL</displayName><description>PORTB wakeIOedge selection register</description><addressOffset>0x704</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PORTC_WK_SEL--><name>PORTC_WK_SEL</name><displayName>PORTC_WK_SEL</displayName><description>PORTC wakeIOedge selection register</description><addressOffset>0x708</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTA_SEL0</name>  <description>PORTA Function Select Register0</description>    <addressOffset>0x00</addressOffset> <size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTA_SEL1</name>  <description>PORTA Function Select Register1</description>    <addressOffset>0x04</addressOffset> <size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_SEL0</name>  <description>PORTB Function Select Register0</description>    <addressOffset>0x08</addressOffset> <size>0x20</size><resetValue>0xffff0000</resetValue></register>
+        <register>  <name>PORTB_SEL1</name>  <description>PORTB Function Select Register1</description>    <addressOffset>0x0C</addressOffset> <size>0x20</size><resetValue>0x01001000</resetValue>
+          <fields>
+            <field> <name>PORTB8</name>  <description>FUNCTION</description>   <bitOffset>0</bitOffset>  <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB9</name>  <description>FUNCTION</description>   <bitOffset>4</bitOffset>  <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB10</name> <description>FUNCTION</description>   <bitOffset>8</bitOffset>  <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB11</name> <description>0001:SWDIO</description> <bitOffset>12</bitOffset> <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB12</name> <description>FUNCTION</description>   <bitOffset>16</bitOffset> <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB13</name> <description>FUNCTION</description>   <bitOffset>20</bitOffset> <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB14</name> <description>0001:SWCLK</description> <bitOffset>24</bitOffset> <bitWidth>4</bitWidth> <access>read-write</access> </field>
+            <field> <name>PORTB15</name> <description>FUNCTION</description>   <bitOffset>28</bitOffset> <bitWidth>4</bitWidth> <access>read-write</access> </field>
+          </fields>
+        </register>
+        <register>  <name>PORTC_SEL0</name>  <description>PORTC Function Select Register0</description>    <addressOffset>0x10</addressOffset> <size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTA_IE</name>    <description>PORTA Input enable register</description>        <addressOffset>0x100</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_IE</name>    <description>PORTB Input enable register</description>        <addressOffset>0x104</addressOffset><size>0x20</size><resetValue>0x4800</resetValue></register>
+        <register>  <name>PORTC_IE</name>    <description>PORTC Input enable register</description>        <addressOffset>0x108</addressOffset><size>0x20</size><resetValue>0x20</resetValue></register>
+        <register>  <name>PORTA_PU</name>    <description>PORTA pull-up enable register</description>      <addressOffset>0x200</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_PU</name>    <description>PORTB pull-up enable register</description>      <addressOffset>0x204</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTC_PU</name>    <description>PORTC pull-up enable register</description>      <addressOffset>0x208</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTA_PD</name>    <description>PORTA pull-down enable register</description>    <addressOffset>0x300</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_PD</name>    <description>PORTB pull-down enable register</description>    <addressOffset>0x304</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTC_PD</name>    <description>PORTC pull-down enable register</description>    <addressOffset>0x308</addressOffset><size>0x20</size><resetValue>0x20</resetValue></register>
+        <register>  <name>PORTA_OD</name>    <description>PORTA Open Drain Enable Register</description>   <addressOffset>0x400</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_OD</name>    <description>PORTB Open Drain Enable Register</description>   <addressOffset>0x404</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTC_OD</name>    <description>PORTC Open Drain Enable Register</description>   <addressOffset>0x408</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTA_WKE</name>   <description>PORTA wakeup enable register</description>       <addressOffset>0x500</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_WKE</name>   <description>PORTB wakeup enable register</description>       <addressOffset>0x504</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTC_WKE</name>   <description>PORTC wakeup enable register</description>       <addressOffset>0x508</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORT_CFG</name>    <description>port configuration register</description>        <addressOffset>0x600</addressOffset><size>0x20</size><resetValue>0x15</resetValue></register>
+        <register>  <name>PORTA_WK_SEL</name><description>PORTA wakeIOedge selection register</description><addressOffset>0x700</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTB_WK_SEL</name><description>PORTB wakeIOedge selection register</description><addressOffset>0x704</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PORTC_WK_SEL</name><description>PORTC wakeIOedge selection register</description><addressOffset>0x708</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
       </registers>
     </peripheral>
-    <peripheral> <!--PWM_BASE0-->
+
+    <peripheral>
       <name>PWM_BASE0</name>
-      <description>PWM_BASE0
-      unit</description>
-      <groupName>PWM_BASE0</groupName>
+      <description>PWM_BASE0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B1000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--PWMBASE0_EN--><name>PWMBASE0_EN</name><displayName>PWMBASE0_EN</displayName><description>PWMBASE enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_DIV--><name>PWMBASE0_DIV</name><displayName>PWMBASE0_DIV</displayName><description>PWMBASE Clock Prescaler Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_CON--><name>PWMBASE0_CON</name><displayName>PWMBASE0_CON</displayName><description>PWMBASE Output Configuration Register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_PERIOD--><name>PWMBASE0_PERIOD</name><displayName>PWMBASE0_PERIOD</displayName><description>PWMBASE Period configuration register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_IE--><name>PWMBASE0_IE</name><displayName>PWMBASE0_IE</displayName><description>PWMBASE interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_IF--><name>PWMBASE0_IF</name><displayName>PWMBASE0_IF</displayName><description>PWMBASE Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_CNT--><name>PWMBASE0_CNT</name><displayName>PWMBASE0_CNT</displayName><description>PWMBASE Current count value register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--PWMBASE0_CH0_COMP--><name>PWMBASE0_CH0_COMP</name><displayName>PWMBASE0_CH0_COMP</displayName><description>PWMBASE0 Toggle Point Configuration Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_CH1_COMP--><name>PWMBASE0_CH1_COMP</name><displayName>PWMBASE0_CH1_COMP</displayName><description>PWMBASE1 Toggle Point Configuration Register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE0_CH2_COMP--><name>PWMBASE0_CH2_COMP</name><displayName>PWMBASE0_CH2_COMP</displayName><description>PWMBASE2 Toggle Point Configuration</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PWMBASE0_EN</name>        <description>PWMBASE enable register</description>                      <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_DIV</name>       <description>PWMBASE Clock Prescaler Register</description>             <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_CON</name>       <description>PWMBASE Output Configuration Register</description>        <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_PERIOD</name>    <description>PWMBASE Period configuration register</description>        <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_IE</name>        <description>PWMBASE interrupt enable register</description>            <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_IF</name>        <description>PWMBASE Interrupt Status Register</description>            <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_CNT</name>       <description>PWMBASE Current count value register</description>         <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>PWMBASE0_CH0_COMP</name>  <description>PWMBASE0 Toggle Point Configuration Register</description> <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_CH1_COMP</name>  <description>PWMBASE1 Toggle Point Configuration Register</description> <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE0_CH2_COMP</name>  <description>PWMBASE2 Toggle Point Configuration</description>          <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--PWM_BASE1-->
+
+    <peripheral>
       <name>PWM_BASE1</name>
-      <description>PWM_BASE1
-      unit</description>
-      <groupName>PWM_BASE1</groupName>
+      <description>PWM_BASE1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B1800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--PWMBASE1_EN--><name>PWMBASE1_EN</name><displayName>PWMBASE1_EN</displayName><description>PWMBASE enable register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_DIV--><name>PWMBASE1_DIV</name><displayName>PWMBASE1_DIV</displayName><description>PWMBASE Clock Prescaler Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_CON--><name>PWMBASE1_CON</name><displayName>PWMBASE1_CON</displayName><description>PWMBASE Output Configuration Register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_PERIOD--><name>PWMBASE1_PERIOD</name><displayName>PWMBASE1_PERIOD</displayName><description>PWMBASE Period configuration register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_IE--><name>PWMBASE1_IE</name><displayName>PWMBASE1_IE</displayName><description>PWMBASE interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_IF--><name>PWMBASE1_IF</name><displayName>PWMBASE1_IF</displayName><description>PWMBASE Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_CNT--><name>PWMBASE1_CNT</name><displayName>PWMBASE1_CNT</displayName><description>PWMBASE Current count value register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--PWMBASE1_CH0_COMP--><name>PWMBASE1_CH0_COMP</name><displayName>PWMBASE1_CH0_COMP</displayName><description>PWMBASE0 Toggle Point Configuration Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_CH1_COMP--><name>PWMBASE1_CH1_COMP</name><displayName>PWMBASE1_CH1_COMP</displayName><description>PWMBASE1 Toggle Point Configuration Register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMBASE1_CH2_COMP--><name>PWMBASE1_CH2_COMP</name><displayName>PWMBASE1_CH2_COMP</displayName><description>PWMBASE2 Toggle Point Configuration</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PWMBASE1_EN</name>        <description>PWMBASE enable register</description>                      <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_DIV</name>       <description>PWMBASE Clock Prescaler Register</description>             <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_CON</name>       <description>PWMBASE Output Configuration Register</description>        <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_PERIOD</name>    <description>PWMBASE Period configuration register</description>        <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_IE</name>        <description>PWMBASE interrupt enable register</description>            <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_IF</name>        <description>PWMBASE Interrupt Status Register</description>            <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_CNT</name>       <description>PWMBASE Current count value register</description>         <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>PWMBASE1_CH0_COMP</name>  <description>PWMBASE0 Toggle Point Configuration Register</description> <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_CH1_COMP</name>  <description>PWMBASE1 Toggle Point Configuration Register</description> <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMBASE1_CH2_COMP</name>  <description>PWMBASE2 Toggle Point Configuration</description>          <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
+
     <peripheral> <!--PWM_PLUS0-->
       <name>PWM_PLUS0</name>
-      <description>PWM_PLUS0
-      unit</description>
-      <groupName>PWM_PLUS0</groupName>
+      <description>PWM_PLUS0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B4000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--PWMPLUS0_CFG--><name>PPWMPLUS0_CFG</name><displayName>PWMPLUS0_CFG</displayName><description>PWMPLUS0_CFG</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_GEN--><name>PWMPLUS0_GEN</name><displayName>PWMPLUS0_GEN</displayName><description>PWMPLUS0_GEN</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CLKSRC--><name>PWMPLUS0_CLKSRC</name><displayName>PWMPLUS0_CLKSRC</displayName><description>PWMPLUS0_CLKSRC</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_BRAKE_CFG--><name>PWMPLUS0_BRAKE_CFG</name><displayName>PWMPLUS0_BRAKE_CFG</displayName><description>PWMPLUS0_BRAKE_CFG</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_MASK_LEV--><name>PWMPLUS0_MASK_LEV</name><displayName>PWMPLUS0_MASK_LEV</displayName><description>PWMPLUS0_MASK_LEV</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_PERIOD--><name>PWMPLUS0_PERIOD</name><displayName>PWMPLUS0_PERIOD</displayName><description>PWMPLUS0_PERIOD</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--PWMPLUS0_CH0_COMP--><name>PWMPLUS0_CH0_COMP</name><displayName>PWMPLUS0_CH0_COMP</displayName><description>PWMPLUS0_CH0_COMP</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CH1_COMP--><name>PWMPLUS0_CH1_COMP</name><displayName>PWMPLUS0_CH1_COMP</displayName><description>PWMPLUS0_CH1_COMP</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CH2_COMP--><name>PWMPLUS0_CH2_COMP</name><displayName>PWMPLUS0_CH2_COMP</displayName><description>PWMPLUS0_CH2_COMP</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CH0_DT--><name>PWMPLUS0_CH0_DT</name><displayName>PWMPLUS0_CH0_DT</displayName><description>PWMPLUS0_CH0_DT</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CH1_DT--><name>PWMPLUS0_CH1_DT</name><displayName>PWMPLUS0_CH1_DT</displayName><description>PWMPLUS0_CH1_DT</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CH2_DT--><name>PWMPLUS0_CH2_DT</name><displayName>PWMPLUS0_CH2_DT</displayName><description>PWMPLUS0_CH2_DT</description><addressOffset>0x38</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_TRIG_COMP--><name>PWMPLUS0_TRIG_COMP</name><displayName>PWMPLUS0_TRIG_COMP</displayName><description>PWMPLUS0_TRIG_COMP</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_TRIG_CFG--><name>PWMPLUS0_TRIG_CFG</name><displayName>PWMPLUS0_TRIG_CFG</displayName><description>PWMPLUS0_TRIG_CFG</description><addressOffset>0x44</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_IE--><name>PWMPLUS0_IE</name><displayName>PWMPLUS0_IE</displayName><description>PWMPLUS0_IE</description><addressOffset>0x60</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_IF--><name>PWMPLUS0_IF</name><displayName>PWMPLUS0_IF</displayName><description>PWMPLUS0_IF</description><addressOffset>0x64</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_SWLOAD--><name>PWMPLUS0_SWLOAD</name><displayName>PWMPLUS0_SWLOAD</displayName><description>PWMPLUS0_SWLOAD</description><addressOffset>0x84</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_MASK_EN--><name>PWMPLUS0_MASK_EN</name><displayName>PWMPLUS0_MASK_EN</displayName><description>PWMPLUS0_MASK_EN</description><addressOffset>0x88</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_CNT_ST--><name>PWMPLUS0_CNT_ST</name><displayName>PWMPLUS0_CNT_ST</displayName><description>PWMPLUS0_CNT_ST</description><addressOffset>0xE0</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS0_BRAKE_ST--><name>PWMPLUS0_BRAKE_ST</name><displayName>PWMPLUS0_BRAKE_ST</displayName><description>PWMPLUS0_BRAKE_ST</description><addressOffset>0xE4</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PPWMPLUS0_CFG</name>     <description>PWMPLUS0_CFG</description>       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_GEN</name>      <description>PWMPLUS0_GEN</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CLKSRC</name>   <description>PWMPLUS0_CLKSRC</description>    <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_BRAKE_CFG</name><description>PWMPLUS0_BRAKE_CFG</description> <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_MASK_LEV</name> <description>PWMPLUS0_MASK_LEV</description>  <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_PERIOD</name>   <description>PWMPLUS0_PERIOD</description>    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>PWMPLUS0_CH0_COMP</name> <description>PWMPLUS0_CH0_COMP</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CH1_COMP</name> <description>PWMPLUS0_CH1_COMP</description>  <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CH2_COMP</name> <description>PWMPLUS0_CH2_COMP</description>  <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CH0_DT</name>   <description>PWMPLUS0_CH0_DT</description>    <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CH1_DT</name>   <description>PWMPLUS0_CH1_DT</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CH2_DT</name>   <description>PWMPLUS0_CH2_DT</description>    <addressOffset>0x38</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_TRIG_COMP</name><description>PWMPLUS0_TRIG_COMP</description> <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_TRIG_CFG</name> <description>PWMPLUS0_TRIG_CFG</description>  <addressOffset>0x44</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_IE</name>       <description>PWMPLUS0_IE</description>        <addressOffset>0x60</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_IF</name>       <description>PWMPLUS0_IF</description>        <addressOffset>0x64</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_SWLOAD</name>   <description>PWMPLUS0_SWLOAD</description>    <addressOffset>0x84</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_MASK_EN</name>  <description>PWMPLUS0_MASK_EN</description>   <addressOffset>0x88</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_CNT_ST</name>   <description>PWMPLUS0_CNT_ST</description>    <addressOffset>0xE0</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS0_BRAKE_ST</name> <description>PWMPLUS0_BRAKE_ST</description>  <addressOffset>0xE4</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--PWM_PLUS1-->
+
+    <peripheral>
       <name>PWM_PLUS1</name>
-      <description>PWM_PLUS1
-      unit</description>
-      <groupName>PWM_PLUS1</groupName>
+      <description>PWM_PLUS1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B4800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--PWMPLUS1_CFG--><name>PPWMPLUS1_CFG</name><displayName>PWMPLUS1_CFG</displayName><description>PWMPLUS1_CFG</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_GEN--><name>PWMPLUS1_GEN</name><displayName>PWMPLUS1_GEN</displayName><description>PWMPLUS1_GEN</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CLKSRC--><name>PWMPLUS1_CLKSRC</name><displayName>PWMPLUS1_CLKSRC</displayName><description>PWMPLUS1_CLKSRC</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_BRAKE_CFG--><name>PWMPLUS1_BRAKE_CFG</name><displayName>PWMPLUS1_BRAKE_CFG</displayName><description>PWMPLUS1_BRAKE_CFG</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_MASK_LEV--><name>PWMPLUS1_MASK_LEV</name><displayName>PWMPLUS1_MASK_LEV</displayName><description>PWMPLUS1_MASK_LEV</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_PERIOD--><name>PWMPLUS1_PERIOD</name><displayName>PWMPLUS1_PERIOD</displayName><description>PWMPLUS1_PERIOD</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0xFFFF</resetValue></register>
-        <register> <!--PWMPLUS1_CH0_COMP--><name>PWMPLUS1_CH0_COMP</name><displayName>PWMPLUS1_CH0_COMP</displayName><description>PWMPLUS1_CH0_COMP</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CH1_COMP--><name>PWMPLUS1_CH1_COMP</name><displayName>PWMPLUS1_CH1_COMP</displayName><description>PWMPLUS1_CH1_COMP</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CH2_COMP--><name>PWMPLUS1_CH2_COMP</name><displayName>PWMPLUS1_CH2_COMP</displayName><description>PWMPLUS1_CH2_COMP</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CH0_DT--><name>PWMPLUS1_CH0_DT</name><displayName>PWMPLUS1_CH0_DT</displayName><description>PWMPLUS1_CH0_DT</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CH1_DT--><name>PWMPLUS1_CH1_DT</name><displayName>PWMPLUS1_CH1_DT</displayName><description>PWMPLUS1_CH1_DT</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CH2_DT--><name>PWMPLUS1_CH2_DT</name><displayName>PWMPLUS1_CH2_DT</displayName><description>PWMPLUS1_CH2_DT</description><addressOffset>0x38</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_TRIG_COMP--><name>PWMPLUS1_TRIG_COMP</name><displayName>PWMPLUS1_TRIG_COMP</displayName><description>PWMPLUS1_TRIG_COMP</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_TRIG_CFG--><name>PWMPLUS1_TRIG_CFG</name><displayName>PWMPLUS1_TRIG_CFG</displayName><description>PWMPLUS1_TRIG_CFG</description><addressOffset>0x44</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_IE--><name>PWMPLUS1_IE</name><displayName>PWMPLUS1_IE</displayName><description>PWMPLUS1_IE</description><addressOffset>0x60</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_IF--><name>PWMPLUS1_IF</name><displayName>PWMPLUS1_IF</displayName><description>PWMPLUS1_IF</description><addressOffset>0x64</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_SWLOAD--><name>PWMPLUS1_SWLOAD</name><displayName>PWMPLUS1_SWLOAD</displayName><description>PWMPLUS1_SWLOAD</description><addressOffset>0x84</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_MASK_EN--><name>PWMPLUS1_MASK_EN</name><displayName>PWMPLUS1_MASK_EN</displayName><description>PWMPLUS1_MASK_EN</description><addressOffset>0x88</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_CNT_ST--><name>PWMPLUS1_CNT_ST</name><displayName>PWMPLUS1_CNT_ST</displayName><description>PWMPLUS1_CNT_ST</description><addressOffset>0xE0</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--PWMPLUS1_BRAKE_ST--><name>PWMPLUS1_BRAKE_ST</name><displayName>PWMPLUS1_BRAKE_ST</displayName><description>PWMPLUS1_BRAKE_ST</description><addressOffset>0xE4</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>PWMPLUS1_CFG</name>      <description>PWMPLUS1_CFG</description>       <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_GEN</name>      <description>PWMPLUS1_GEN</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CLKSRC</name>   <description>PWMPLUS1_CLKSRC</description>    <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_BRAKE_CFG</name><description>PWMPLUS1_BRAKE_CFG</description> <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_MASK_LEV</name> <description>PWMPLUS1_MASK_LEV</description>  <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_PERIOD</name>   <description>PWMPLUS1_PERIOD</description>    <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0xFFFF</resetValue></register>
+        <register>  <name>PWMPLUS1_CH0_COMP</name> <description>PWMPLUS1_CH0_COMP</description>  <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CH1_COMP</name> <description>PWMPLUS1_CH1_COMP</description>  <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CH2_COMP</name> <description>PWMPLUS1_CH2_COMP</description>  <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CH0_DT</name>   <description>PWMPLUS1_CH0_DT</description>    <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CH1_DT</name>   <description>PWMPLUS1_CH1_DT</description>    <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CH2_DT</name>   <description>PWMPLUS1_CH2_DT</description>    <addressOffset>0x38</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_TRIG_COMP</name><description>PWMPLUS1_TRIG_COMP</description> <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_TRIG_CFG</name> <description>PWMPLUS1_TRIG_CFG</description>  <addressOffset>0x44</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_IE</name>       <description>PWMPLUS1_IE</description>        <addressOffset>0x60</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_IF</name>       <description>PWMPLUS1_IF</description>        <addressOffset>0x64</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_SWLOAD</name>   <description>PWMPLUS1_SWLOAD</description>    <addressOffset>0x84</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_MASK_EN</name>  <description>PWMPLUS1_MASK_EN</description>   <addressOffset>0x88</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_CNT_ST</name>   <description>PWMPLUS1_CNT_ST</description>    <addressOffset>0xE0</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>PWMPLUS1_BRAKE_ST</name> <description>PWMPLUS1_BRAKE_ST</description>  <addressOffset>0xE4</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--SPI0-->
+
+    <peripheral>
       <name>SPI0</name>
-      <description>SPI0
-      unit</description>
-      <groupName>SPI0</groupName>
+      <description>SPI0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B8000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--SPI0_CR--><name>SPI0_CR</name><displayName>SPI0_CR</displayName><description>SPIcontrol register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x1010</resetValue></register>
-        <register> <!--SPI0_WDR--><name>SPI0_WDR</name><displayName>SPI0_WDR</displayName><description>SPI write data register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI0_RDR--><name>SPI0_RDR</name><displayName>SPI0_RDR</displayName><description>SPI read data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI0_IE--><name>SPI0_IE</name><displayName>SPI0_IE</displayName><description>SPI interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI0_IF--><name>SPI0_IF</name><displayName>SPI0_IF</displayName><description>SPI Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x08</resetValue></register>
-        <register> <!--SPI0_FIFOST--><name>SPI0_FIFOST</name><displayName>SPI0_FIFOST</displayName><description>SPI FIFO status register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x09</resetValue></register>
+        <register>  <name>SPI0_CR</name>      <description>SPIcontrol register</description>           <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x1010</resetValue></register>
+        <register>  <name>SPI0_WDR</name>     <description>SPI write data register</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI0_RDR</name>     <description>SPI read data register</description>        <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI0_IE</name>      <description>SPI interrupt enable register</description> <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI0_IF</name>      <description>SPI Interrupt Status Register</description> <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x08</resetValue>  </register>
+        <register>  <name>SPI0_FIFOST</name>  <description>SPI FIFO status register</description>      <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x09</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--SPI1-->
+
+    <peripheral>
       <name>SPI1</name>
-      <description>SPI1
-      unit</description>
-      <groupName>SPI1</groupName>
+      <description>SPI1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B8800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--SPI1_CR--><name>SPI1_CR</name><displayName>SPI1_CR</displayName><description>SPIcontrol register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x1010</resetValue></register>
-        <register> <!--SPI1_WDR--><name>SPI1_WDR</name><displayName>SPI1_WDR</displayName><description>SPI write data register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI1_RDR--><name>SPI1_RDR</name><displayName>SPI1_RDR</displayName><description>SPI read data register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI1_IE--><name>SPI1_IE</name><displayName>SPI1_IE</displayName><description>SPI interrupt enable register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--SPI1_IF--><name>SPI1_IF</name><displayName>SPI1_IF</displayName><description>SPI Interrupt Status Register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x08</resetValue></register>
-        <register> <!--SPI1_FIFOST--><name>SPI1_FIFOST</name><displayName>SPI1_FIFOST</displayName><description>SPI FIFO status register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x09</resetValue></register>
+        <register>  <name>SPI1_CR</name>      <description>SPIcontrol register</description>           <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x1010</resetValue></register>
+        <register>  <name>SPI1_WDR</name>     <description>SPI write data register</description>       <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI1_RDR</name>     <description>SPI read data register</description>        <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI1_IE</name>      <description>SPI interrupt enable register</description> <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>  </register>
+        <register>  <name>SPI1_IF</name>      <description>SPI Interrupt Status Register</description> <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x08</resetValue>  </register>
+        <register>  <name>SPI1_FIFOST</name>  <description>SPI FIFO status register</description>      <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x09</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--IIC0-->
+
+    <peripheral>
       <name>IIC0</name>
-      <description>IIC0
-      unit</description>
-      <groupName>IIC0</groupName>
+      <description>IIC0 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B9000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--IIC0_CCFG--><name>IIC0_CCFG</name><displayName>IIC0_CCFG</displayName><description>General Configuration Register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x18</resetValue></register>
-        <register> <!--IIC0_CST--><name>IIC0_CST</name><displayName>IIC0_CST</displayName><description>General Status Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x06</resetValue></register>
-        <register> <!--IIC0_CTRANS--><name>IIC0_CTRANS</name><displayName>IIC0_CTRANS</displayName><description>general transfer register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x02</resetValue></register>
-        <register> <!--IIC0_RXDATA--><name>IIC0_RXDATA</name><displayName>IIC0_RXDATA</displayName><description>Receive Data Register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC0_TXDATA--><name>IIC0_TXDATA</name><displayName>IIC0_TXDATA</displayName><description>send data register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC0_IE--><name>IIC0_IE</name><displayName>IIC0_IE</displayName><description>interrupt enable register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC0_IF--><name>IIC0_IF</name><displayName>IIC0_IF</displayName><description>Interrupt Flag Register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x01</resetValue></register>
-        <register> <!--IIC0_MCTRL--><name>IIC0_MCTRL</name><displayName>IIC0_MCTRL</displayName><description>Host Mode Control Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC0_MSPC--><name>IIC0_MSPC</name><displayName>IIC0_MSPC</displayName><description>Timing Configuration Register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x33F7F</resetValue></register>
-        <register> <!--IIC0_SCTRL--><name>IIC0_SCTRL</name><displayName>IIC0_SCTRL</displayName><description>Slave Mode Control Register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x08</resetValue></register>
-        <register> <!--IIC0_SADDR--><name>IIC0_SADDR</name><displayName>IIC0_SADDR</displayName><description>Slave Mode Address Register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>IIC0_CCFG</name>    <description>General Configuration Register</description>  <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x18</resetValue>   </register>
+        <register>  <name>IIC0_CST</name>     <description>General Status Register</description>         <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x06</resetValue>   </register>
+        <register>  <name>IIC0_CTRANS</name>  <description>general transfer register</description>       <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x02</resetValue>   </register>
+        <register>  <name>IIC0_RXDATA</name>  <description>Receive Data Register</description>           <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC0_TXDATA</name>  <description>send data register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC0_IE</name>      <description>interrupt enable register</description>       <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC0_IF</name>      <description>Interrupt Flag Register</description>         <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x01</resetValue>   </register>
+        <register>  <name>IIC0_MCTRL</name>   <description>Host Mode Control Register</description>      <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC0_MSPC</name>    <description>Timing Configuration Register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x33F7F</resetValue></register>
+        <register>  <name>IIC0_SCTRL</name>   <description>Slave Mode Control Register</description>     <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x08</resetValue>   </register>
+        <register>  <name>IIC0_SADDR</name>   <description>Slave Mode Address Register</description>     <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
       </registers>
     </peripheral>
+
     <peripheral> <!--IIC1-->
       <name>IIC1</name>
-      <description>IIC1
-      unit</description>
-      <groupName>IIC1</groupName>
+      <description>IIC1 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400B9800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--IIC1_CCFG--><name>IIC1_CCFG</name><displayName>IIC1_CCFG</displayName><description>General Configuration Register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x18</resetValue></register>
-        <register> <!--IIC1_CST--><name>IIC1_CST</name><displayName>IIC1_CST</displayName><description>General Status Register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x06</resetValue></register>
-        <register> <!--IIC1_CTRANS--><name>IIC1_CTRANS</name><displayName>IIC1_CTRANS</displayName><description>general transfer register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x02</resetValue></register>
-        <register> <!--IIC1_RXDATA--><name>IIC1_RXDATA</name><displayName>IIC1_RXDATA</displayName><description>Receive Data Register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC1_TXDATA--><name>IIC1_TXDATA</name><displayName>IIC1_TXDATA</displayName><description>send data register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC1_IE--><name>IIC1_IE</name><displayName>IIC1_IE</displayName><description>interrupt enable register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC1_IF--><name>IIC1_IF</name><displayName>IIC1_IF</displayName><description>Interrupt Flag Register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x01</resetValue></register>
-        <register> <!--IIC1_MCTRL--><name>IIC1_MCTRL</name><displayName>IIC1_MCTRL</displayName><description>Host Mode Control Register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--IIC1_MSPC--><name>IIC1_MSPC</name><displayName>IIC1_MSPC</displayName><description>Timing Configuration Register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x33F7F</resetValue></register>
-        <register> <!--IIC1_SCTRL--><name>IIC1_SCTRL</name><displayName>IIC1_SCTRL</displayName><description>Slave Mode Control Register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x08</resetValue></register>
-        <register> <!--IIC1_SADDR--><name>IIC1_SADDR</name><displayName>IIC1_SADDR</displayName><description>Slave Mode Address Register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>IIC1_CCFG</name>    <description>General Configuration Register</description>  <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x18</resetValue>   </register>
+        <register>  <name>IIC1_CST</name>     <description>General Status Register</description>         <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x06</resetValue>   </register>
+        <register>  <name>IIC1_CTRANS</name>  <description>general transfer register</description>       <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x02</resetValue>   </register>
+        <register>  <name>IIC1_RXDATA</name>  <description>Receive Data Register</description>           <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC1_TXDATA</name>  <description>send data register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC1_IE</name>      <description>interrupt enable register</description>       <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC1_IF</name>      <description>Interrupt Flag Register</description>         <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x01</resetValue>   </register>
+        <register>  <name>IIC1_MCTRL</name>   <description>Host Mode Control Register</description>      <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
+        <register>  <name>IIC1_MSPC</name>    <description>Timing Configuration Register</description>   <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x33F7F</resetValue></register>
+        <register>  <name>IIC1_SCTRL</name>   <description>Slave Mode Control Register</description>     <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x08</resetValue>   </register>
+        <register>  <name>IIC1_SADDR</name>   <description>Slave Mode Address Register</description>     <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue>   </register>
       </registers>
     </peripheral>
+
     <peripheral> <!--SARADC-->
       <name>SARADC</name>
-      <description>SARADC
-      unit</description>
-      <groupName>SARADC</groupName>
+      <description>SARADC unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400BA000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--ADC_CFG--><name>ADC_CFG</name><displayName>ADC_CFG</displayName><description>ADCconfiguration register</description><addressOffset>0x00</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_START--><name>ADC_START</name><displayName>ADC_START</displayName><description>ADC boot register</description><addressOffset>0x04</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_IE--><name>ADC_IE</name><displayName>ADC_IE</displayName><description>ADCinterrupt enable register</description><addressOffset>0x08</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_IF--><name>ADC_IF</name><displayName>ADC_IF</displayName><description>ADCInterrupt Status Register</description><addressOffset>0x0C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH0_STAT--><name>ADC_CH0_STAT</name><displayName>ADC_CH0_STAT</displayName><description>ADC0status register</description><addressOffset>0x10</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH0_DATA--><name>ADC_CH0_DATA</name><displayName>ADC_CH0_DATA</displayName><description>ADC0data register</description><addressOffset>0x14</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH1_STAT--><name>ADC_CH1_STAT</name><displayName>ADC_CH1_STAT</displayName><description>ADC1status register</description><addressOffset>0x18</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH1_DATA--><name>ADC_CH1_DATA</name><displayName>ADC_CH1_DATA</displayName><description>ADC1data register</description><addressOffset>0x1C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH2_STAT--><name>ADC_CH2_STAT</name><displayName>ADC_CH2_STAT</displayName><description>ADC2status register</description><addressOffset>0x20</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH2_DATA--><name>ADC_CH2_DATA</name><displayName>ADC_CH2_DATA</displayName><description>ADC2data register</description><addressOffset>0x24</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH3_STAT--><name>ADC_CH3_STAT</name><displayName>ADC_CH3_STAT</displayName><description>ADC3status register</description><addressOffset>0x28</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH3_DATA--><name>ADC_CH3_DATA</name><displayName>ADC_CH3_DATA</displayName><description>ADC3data register</description><addressOffset>0x2C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH4_STAT--><name>ADC_CH4_STAT</name><displayName>ADC_CH4_STAT</displayName><description>ADC4status register</description><addressOffset>0x30</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH4_DATA--><name>ADC_CH4_DATA</name><displayName>ADC_CH4_DATA</displayName><description>ADC4data register</description><addressOffset>0x34</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH5_STAT--><name>ADC_CH5_STAT</name><displayName>ADC_CH5_STAT</displayName><description>ADC5status register</description><addressOffset>0x38</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH5_DATA--><name>ADC_CH5_DATA</name><displayName>ADC_CH5_DATA</displayName><description>ADC5data register</description><addressOffset>0x3C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH6_STAT--><name>ADC_CH6_STAT</name><displayName>ADC_CH6_STAT</displayName><description>ADC6status register</description><addressOffset>0x40</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH6_DATA--><name>ADC_CH6_DATA</name><displayName>ADC_CH6_DATA</displayName><description>ADC6data register</description><addressOffset>0x44</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH7_STAT--><name>ADC_CH7_STAT</name><displayName>ADC_CH7_STAT</displayName><description>ADC7status register</description><addressOffset>0x48</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH7_DATA--><name>ADC_CH7_DATA</name><displayName>ADC_CH7_DATA</displayName><description>ADC7data register</description><addressOffset>0x4C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH8_STAT--><name>ADC_CH8_STAT</name><displayName>ADC_CH8_STAT</displayName><description>ADC8status register</description><addressOffset>0x50</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH8_DATA--><name>ADC_CH8_DATA</name><displayName>ADC_CH8_DATA</displayName><description>ADC8data register</description><addressOffset>0x54</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH9_STAT--><name>ADC_CH9_STAT</name><displayName>ADC_CH9_STAT</displayName><description>ADC9status register</description><addressOffset>0x58</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH9_DATA--><name>ADC_CH9_DATA</name><displayName>ADC_CH9_DATA</displayName><description>ADC9data register</description><addressOffset>0x5C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH10_STAT--><name>ADC_CH10_STAT</name><displayName>ADC_CH10_STAT</displayName><description>ADC10status register</description><addressOffset>0x60</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH10_DATA--><name>ADC_CH10_DATA</name><displayName>ADC_CH10_DATA</displayName><description>ADC10data register</description><addressOffset>0x64</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH11_STAT--><name>ADC_CH11_STAT</name><displayName>ADC_CH11_STAT</displayName><description>ADC11status register</description><addressOffset>0x68</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH11_DATA--><name>ADC_CH11_DATA</name><displayName>ADC_CH11_DATA</displayName><description>ADC11data register</description><addressOffset>0x6C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH12_STAT--><name>ADC_CH12_STAT</name><displayName>ADC_CH12_STAT</displayName><description>ADC12status register</description><addressOffset>0x70</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH12_DATA--><name>ADC_CH12_DATA</name><displayName>ADC_CH12_DATA</displayName><description>ADC12data register</description><addressOffset>0x74</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH13_STAT--><name>ADC_CH13_STAT</name><displayName>ADC_CH13_STAT</displayName><description>ADC13status register</description><addressOffset>0x78</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH13_DATA--><name>ADC_CH13_DATA</name><displayName>ADC_CH13_DATA</displayName><description>ADC13data register</description><addressOffset>0x7C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH14_STAT--><name>ADC_CH14_STAT</name><displayName>ADC_CH14_STAT</displayName><description>ADC14status register</description><addressOffset>0x80</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH14_DATA--><name>ADC_CH14_DATA</name><displayName>ADC_CH14_DATA</displayName><description>ADC14data register</description><addressOffset>0x84</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH15_STAT--><name>ADC_CH15_STAT</name><displayName>ADC_CH15_STAT</displayName><description>ADC15status register</description><addressOffset>0x88</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CH15_DATA--><name>ADC_CH15_DATA</name><displayName>ADC_CH15_DATA</displayName><description>ADC15data register</description><addressOffset>0x8C</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_FIFO_STAT--><name>ADC_FIFO_STAT</name><displayName>ADC_FIFO_STAT</displayName><description>ADC FIFOsstatus register</description><addressOffset>0xA0</addressOffset><size>0x20</size><resetValue>0x04</resetValue></register>
-        <register> <!--ADC_FIFO_DATA--><name>ADC_FIFO_DATA</name><displayName>ADC_FIFO_DATA</displayName><description>ADC FIFOsdata register</description><addressOffset>0xA4</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--EXTTRIG_SEL--><name>EXTTRIG_SEL</name><displayName>EXTTRIG_SEL</displayName><description>External signal triggerADCchoose deposit device</description><addressOffset>0xB0</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CALIB_OFFSET--><name>ADC_CALIB_OFFSET</name><displayName>ADC_CALIB_OFFSET</displayName><description>ADC calibration OFFSET register</description><addressOffset>0xF0</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
-        <register> <!--ADC_CALIB_KD--><name>ADC_CALIB_KD</name><displayName>ADC_CALIB_KD</displayName><description>ADC calibration KD register</description><addressOffset>0xF4</addressOffset><size>0x20</size><resetValue>0x00</resetValue></register>
+        <register>  <name>ADC_CFG</name>          <description>ADC configuration register</description>        <addressOffset>0x00</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_START</name>        <description>ADC boot register</description>                 <addressOffset>0x04</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_IE</name>           <description>ADC interrupt enable register</description>     <addressOffset>0x08</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_IF</name>           <description>ADC Interrupt status Register</description>     <addressOffset>0x0C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH0_STAT</name>     <description>ADC0 status register</description>              <addressOffset>0x10</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH0_DATA</name>     <description>ADC0 data register</description>                <addressOffset>0x14</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH1_STAT</name>     <description>ADC1 status register</description>              <addressOffset>0x18</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH1_DATA</name>     <description>ADC1 data register</description>                <addressOffset>0x1C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH2_STAT</name>     <description>ADC2 status register</description>              <addressOffset>0x20</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH2_DATA</name>     <description>ADC2 data register</description>                <addressOffset>0x24</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH3_STAT</name>     <description>ADC3 status register</description>              <addressOffset>0x28</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH3_DATA</name>     <description>ADC3 data register</description>                <addressOffset>0x2C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH4_STAT</name>     <description>ADC4 status register</description>              <addressOffset>0x30</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH4_DATA</name>     <description>ADC4 data register</description>                <addressOffset>0x34</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH5_STAT</name>     <description>ADC5 status register</description>              <addressOffset>0x38</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH5_DATA</name>     <description>ADC5 data register</description>                <addressOffset>0x3C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH6_STAT</name>     <description>ADC6 status register</description>              <addressOffset>0x40</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH6_DATA</name>     <description>ADC6 data register</description>                <addressOffset>0x44</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH7_STAT</name>     <description>ADC7 status register</description>              <addressOffset>0x48</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH7_DATA</name>     <description>ADC7 data register</description>                <addressOffset>0x4C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH8_STAT</name>     <description>ADC8 status register</description>              <addressOffset>0x50</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH8_DATA</name>     <description>ADC8 data register</description>                <addressOffset>0x54</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH9_STAT</name>     <description>ADC9 status register</description>              <addressOffset>0x58</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH9_DATA</name>     <description>ADC9 data register</description>                <addressOffset>0x5C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH10_STAT</name>    <description>ADC10 status register</description>             <addressOffset>0x60</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH10_DATA</name>    <description>ADC10 data register</description>               <addressOffset>0x64</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH11_STAT</name>    <description>ADC11 status register</description>             <addressOffset>0x68</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH11_DATA</name>    <description>ADC11 data register</description>               <addressOffset>0x6C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH12_STAT</name>    <description>ADC12 status register</description>             <addressOffset>0x70</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH12_DATA</name>    <description>ADC12 data register</description>               <addressOffset>0x74</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH13_STAT</name>    <description>ADC13 status register</description>             <addressOffset>0x78</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH13_DATA</name>    <description>ADC13 data register</description>               <addressOffset>0x7C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH14_STAT</name>    <description>ADC14 status register</description>             <addressOffset>0x80</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH14_DATA</name>    <description>ADC14 data register</description>               <addressOffset>0x84</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH15_STAT</name>    <description>ADC15 status register</description>             <addressOffset>0x88</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CH15_DATA</name>    <description>ADC15 data register</description>               <addressOffset>0x8C</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_FIFO_STAT</name>    <description>ADC FIFO status register</description>          <addressOffset>0xA0</addressOffset> <size>0x20</size> <resetValue>0x04</resetValue> </register>
+        <register>  <name>ADC_FIFO_DATA</name>    <description>ADC FIFO data register</description>            <addressOffset>0xA4</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>EXTTRIG_SEL</name>      <description>External signal trigger ADC</description>       <addressOffset>0xB0</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CALIB_OFFSET</name> <description>ADC calibration OFFSET register</description>   <addressOffset>0xF0</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
+        <register>  <name>ADC_CALIB_KD</name>     <description>ADC calibration KD register</description>       <addressOffset>0xF4</addressOffset> <size>0x20</size> <resetValue>0x00</resetValue> </register>
       </registers>
     </peripheral>
-    <peripheral> <!--AES128-->
+
+    <peripheral>
       <name>AES128</name>
-      <description>AES128
-      unit</description>
-      <groupName>AES128</groupName>
+      <description>AES128 unit</description>
+      <groupName>Peripheral</groupName>
       <baseAddress>0x400BD000</baseAddress>
       <addressBlock>
         <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
@@ -768,4 +735,5 @@
     </peripheral>
   </peripherals>
 </device>
+
 
