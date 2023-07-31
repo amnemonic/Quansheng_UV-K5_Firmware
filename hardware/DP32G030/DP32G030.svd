@@ -1639,6 +1639,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <size>0x20</size>
           <resetValue>0x0</resetValue>
 		</register> 
+        <register> <!--FLASH_RDATA-->
+          <name>FLASH_RDATA</name>
+          <displayName>FLASH_RDATA</displayName>
+          <description>Flash read data register</description>
+          <addressOffset>0x0C</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x0</resetValue>
+    </register> 
         <register> <!--FLASH_START-->
           <name>FLASH_START</name>
           <displayName>FLASH_START</displayName>
