@@ -15,108 +15,30 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <resetValue>0x0</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
   <peripherals>
-    <peripheral> <!--SYSCON-->
+
+    <peripheral>
       <name>SYSCON</name>
-      <description>System Configuration
-      unit</description>
+      <description>System Configuration unit</description>
       <groupName>SYSCON</groupName>
       <baseAddress>0x40000000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--CLK_SEL-->
-          <name>CLK_SEL</name>
-          <displayName>CLK_SEL</displayName>
-          <description>Clock Select Register</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x02</resetValue>
-        </register>
-        <register> <!--DIV_CLK_GATE-->
-          <name>DIV_CLK_GATE</name>
-          <displayName>DIV_CLK_GATE</displayName>
-          <description>Divided Clock Gating Register</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x01</resetValue>
-        </register>
-        <register> <!--DEV_CLK_GATE-->
-          <name>DEV_CLK_GATE</name>
-          <displayName>DEV_CLK_GATE</displayName>
-          <description>Peripheral Clock Gating Registers</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--RC_FREQ_DELTA-->
-          <name>RC_FREQ_DELTA</name>
-          <displayName>RC_FREQ_DELTA</displayName>
-          <description>RCHF/RCLFTrue Frequency Value Difference Register</description>
-          <addressOffset>0x78</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--VREF_VOLT_DELTA-->
-          <name>VREF_VOLT_DELTA</name>
-          <displayName>VREF_VOLT_DELTA</displayName>
-          <description>VREFTrue Voltage Difference Register</description>
-          <addressOffset>0x7C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CHIP_ID0-->
-          <name>CHIP_ID0</name>
-          <displayName>CHIP_ID0</displayName>
-          <description>equipmentIDregister0</description>
-          <addressOffset>0x80</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CHIP_ID1-->
-          <name>CHIP_ID1</name>
-          <displayName>CHIP_ID1</displayName>
-          <description>equipmentIDregister1</description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CHIP_ID2-->
-          <name>CHIP_ID2</name>
-          <displayName>CHIP_ID2</displayName>
-          <description>equipmentIDregister2</description>
-          <addressOffset>0x88</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CHIP_ID3-->
-          <name>CHIP_ID3</name>
-          <displayName>CHIP_ID3</displayName>
-          <description>equipmentIDregister3</description>
-          <addressOffset>0x8C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--PLL_CTRL-->
-          <name>PLL_CTRL</name>
-          <displayName>PLL_CTRL</displayName>
-          <description>PLLscontrol register</description>
-          <addressOffset>0x180</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x02C8</resetValue>
-        </register>
-        <register> <!--PLL_ST-->
-          <name>PLL_ST</name>
-          <displayName>PLL_ST</displayName>
-          <description>PLLsstatus register</description>
-          <addressOffset>0x184</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>CLK_SEL</name>          <description>Clock Select Register</description>                               <addressOffset>0x00</addressOffset>    <size>0x20</size>  <resetValue>0x02</resetValue>     </register>
+        <register>  <name>DIV_CLK_GATE</name>     <description>Divided Clock Gating Register</description>                       <addressOffset>0x04</addressOffset>    <size>0x20</size>  <resetValue>0x01</resetValue>     </register>
+        <register>  <name>DEV_CLK_GATE</name>     <description>Peripheral Clock Gating Registers</description>                   <addressOffset>0x08</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>RC_FREQ_DELTA</name>    <description>RCHF/RCLF True Frequency Value Difference Register</description>  <addressOffset>0x78</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>VREF_VOLT_DELTA</name>  <description>VREFTrue Voltage Difference Register</description>                <addressOffset>0x7C</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>CHIP_ID0</name>         <description>Equipment ID register 0</description>                             <addressOffset>0x80</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>CHIP_ID1</name>         <description>Equipment ID register 1</description>                             <addressOffset>0x84</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>CHIP_ID2</name>         <description>Equipment ID register 2</description>                             <addressOffset>0x88</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>CHIP_ID3</name>         <description>Equipment ID register 3</description>                             <addressOffset>0x8C</addressOffset>    <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
+        <register>  <name>PLL_CTRL</name>         <description>PLL control register</description>                                <addressOffset>0x180</addressOffset>   <size>0x20</size>  <resetValue>0x02C8</resetValue>   </register>
+        <register>  <name>PLL_ST</name>           <description>PLL status register</description>                                 <addressOffset>0x184</addressOffset>   <size>0x20</size>  <resetValue>0x00</resetValue>     </register>
       </registers>
     </peripheral>
+
     <peripheral> <!--PMU-->
       <name>PMU</name>
       <description>Power management
