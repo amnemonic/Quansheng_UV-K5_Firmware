@@ -339,7 +339,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>DMA_CH0MDADDR</name>
           <displayName>DMA_CH0MDADDR</displayName>
           <description>CH0 Destination Address Register</description>
-          <addressOffset>0x00</addressOffset>
+          <addressOffset>0x10C</addressOffset>
           <size>0x20</size>
           <resetValue>0x10C</resetValue>
         </register>
@@ -2889,7 +2889,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>ADC_CH0_DATA</name>
           <displayName>ADC_CH0_DATA</displayName>
           <description>ADC0data register</description>
-          <addressOffset>0x00</addressOffset>
+          <addressOffset>0x14</addressOffset>
           <size>0x20</size>
           <resetValue>0x00</resetValue>
         </register>
@@ -2993,7 +2993,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <name>ADC_CH7_STAT</name>
           <displayName>ADC_CH7_STAT</displayName>
           <description>ADC7status register</description>
-          <addressOffset>0x00</addressOffset>
+          <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <resetValue>0x48</resetValue>
         </register>
