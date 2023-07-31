@@ -39,578 +39,138 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       </registers>
     </peripheral>
 
-    <peripheral> <!--PMU-->
+    <peripheral>
       <name>PMU</name>
-      <description>Power management
-      unit</description>
+      <description>Power management unit</description>
       <groupName>PMU</groupName>
       <baseAddress>0x40000800</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+      <addressBlock> 
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--LPOW_MD-->
-          <name>LPOW_MD</name>
-          <displayName>LPOW_MD</displayName>
-          <description>Low Power Mode Select Register</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--LPMD_WKEN-->
-          <name>LPMD_WKEN</name>
-          <displayName>LPMD_WKEN</displayName>
-          <description>Low Power Wakeup Source Enable Register</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--LPMD_WKST-->
-          <name>LPMD_WKST</name>
-          <displayName>LPMD_WKST</displayName>
-          <description>Low Power Wakeup Source Status Register</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CHIP_RST_ST-->
-          <name>CHIP_RST_ST</name>
-          <displayName>CHIP_RST_ST</displayName>
-          <description>Chip Reset Status Register</description>
-          <addressOffset>0x0C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x01</resetValue>
-        </register>
-        <register> <!--SRC_CFG-->
-          <name>SRC_CFG</name>
-          <displayName>SRC_CFG</displayName>
-          <description>Clock Source Configuration Register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x03</resetValue>
-        </register>
-        <register> <!--TRIM_POW0-->
-          <name>TRIM_POW0</name>
-          <displayName>TRIM_POW0</displayName>
-          <description>POW0 Related Analog Modules TRIM register</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_POW1-->
-          <name>TRIM_POW1</name>
-          <displayName>TRIM_POW1</displayName>
-          <description>POW1 Related Analog Modules TRIM register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_POW2-->
-          <name>TRIM_POW2</name>
-          <displayName>TRIM_POW2</displayName>
-          <description>POW2 Related Analog Modules TRIM register</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_POW3-->
-          <name>TRIM_POW3</name>
-          <displayName>TRIM_POW3</displayName>
-          <description>POW3 Related Analog Modules TRIM register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_RCHF-->
-          <name>TRIM_RCHF</name>
-          <displayName>TRIM_RCHF</displayName>
-          <description>RCHFclock moduleTRIMregister</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x0808</resetValue>
-        </register>
-        <register> <!--TRIM_RCLF-->
-          <name>TRIM_RCLF</name>
-          <displayName>TRIM_RCLF</displayName>
-          <description>RCLFclock moduleTRIMregister</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x0810</resetValue>
-        </register>
-        <register> <!--TRIM_OPA-->
-          <name>TRIM_OPA</name>
-          <displayName>TRIM_OPA</displayName>
-          <description>OPAmoduleTRIMregister</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_PLL-->
-          <name>TRIM_PLL</name>
-          <displayName>TRIM_PLL</displayName>
-          <description>PLLsmoduleTRIMregister</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--TRIM_LOCK-->
-          <name>TRIM_LOCK</name>
-          <displayName>TRIM_LOCK</displayName>
-          <description>TRIMlock register</description>
-          <addressOffset>0x80</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DATA_BAKE0-->
-          <name>DATA_BAKE0</name>
-          <displayName>DATA_BAKE0</displayName>
-          <description>Non-power-off domain data backup register0</description>
-          <addressOffset>0x100</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DATA_BAKE1-->
-          <name>DATA_BAKE1</name>
-          <displayName>DATA_BAKE1</displayName>
-          <description>Non-power-off domain data backup register1</description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DATA_BAKE2-->
-          <name>DATA_BAKE2</name>
-          <displayName>DATA_BAKE2</displayName>
-          <description>Non-power-off domain data backup register2</description>
-          <addressOffset>0x108</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DATA_BAKE3-->
-          <name>DATA_BAKE3</name>
-          <displayName>DATA_BAKE3</displayName>
-          <description>Non-power-off domain data backup register3</description>
-          <addressOffset>0x10C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>LPOW_MD</name>      <description>Low Power Mode Select Register</description>                  <addressOffset>0x00</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>LPMD_WKEN</name>    <description>Low Power Wakeup Source Enable Register</description>         <addressOffset>0x04</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>LPMD_WKST</name>    <description>Low Power Wakeup Source Status Register</description>         <addressOffset>0x08</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>CHIP_RST_ST</name>  <description>Chip Reset Status Register</description>                      <addressOffset>0x0C</addressOffset>    <size>0x20</size>   <resetValue>0x01</resetValue>     </register>
+        <register>  <name>SRC_CFG</name>      <description>Clock Source Configuration Register</description>             <addressOffset>0x10</addressOffset>    <size>0x20</size>   <resetValue>0x03</resetValue>     </register>
+        <register>  <name>TRIM_POW0</name>    <description>POW0 Related Analog Modules TRIM register</description>       <addressOffset>0x20</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_POW1</name>    <description>POW1 Related Analog Modules TRIM register</description>       <addressOffset>0x24</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_POW2</name>    <description>POW2 Related Analog Modules TRIM register</description>       <addressOffset>0x28</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_POW3</name>    <description>POW3 Related Analog Modules TRIM register</description>       <addressOffset>0x2C</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_RCHF</name>    <description>RCHFclock moduleTRIMregister</description>                    <addressOffset>0x30</addressOffset>    <size>0x20</size>   <resetValue>0x0808</resetValue>   </register>
+        <register>  <name>TRIM_RCLF</name>    <description>RCLFclock moduleTRIMregister</description>                    <addressOffset>0x34</addressOffset>    <size>0x20</size>   <resetValue>0x0810</resetValue>   </register>
+        <register>  <name>TRIM_OPA</name>     <description>OPAmoduleTRIMregister</description>                           <addressOffset>0x38</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_PLL</name>     <description>PLLsmoduleTRIMregister</description>                          <addressOffset>0x3C</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>TRIM_LOCK</name>    <description>TRIMlock register</description>                               <addressOffset>0x80</addressOffset>    <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>DATA_BAKE0</name>   <description>Non-power-off domain data backup register0</description>      <addressOffset>0x100</addressOffset>   <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>DATA_BAKE1</name>   <description>Non-power-off domain data backup register1</description>      <addressOffset>0x104</addressOffset>   <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>DATA_BAKE2</name>   <description>Non-power-off domain data backup register2</description>      <addressOffset>0x108</addressOffset>   <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
+        <register>  <name>DATA_BAKE3</name>   <description>Non-power-off domain data backup register3</description>      <addressOffset>0x10C</addressOffset>   <size>0x20</size>   <resetValue>0x00</resetValue>     </register>
       </registers>
     </peripheral>
-    <peripheral> <!--DMA-->
+
+    <peripheral>
       <name>DMA</name>
-      <description>DMA
-      unit</description>
+      <description>DMA unit</description>
       <groupName>DMA</groupName>
       <baseAddress>0x40001000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--DMA_CTR-->
-          <name>DMA_CTR</name>
-          <displayName>DMA_CTR</displayName>
-          <description>DMAcontrol register</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_INTEN-->
-          <name>DMA_INTEN</name>
-          <displayName>DMA_INTEN</displayName>
-          <description>DMAinterrupt enable register</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_INTST-->
-          <name>DMA_INTST</name>
-          <displayName>DMA_INTST</displayName>
-          <description>DMAInterrupt Status Register</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH0CTR-->
-          <name>DMA_CH0CTR</name>
-          <displayName>DMA_CH0CTR</displayName>
-          <description>CH0 control register</description>
-          <addressOffset>0x100</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x1FFE</resetValue>
-        </register>
-        <register> <!--DMA_CH0MOD-->
-          <name>DMA_CH0MOD</name>
-          <displayName>DMA_CH0MOD</displayName>
-          <description>CH0 mode register</description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH0MSADDR-->
-          <name>DMA_CH0MSADDR</name>
-          <displayName>DMA_CH0MSADDR</displayName>
-          <description>CH0 source address register</description>
-          <addressOffset>0x108</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH0MDADDR-->
-          <name>DMA_CH0MDADDR</name>
-          <displayName>DMA_CH0MDADDR</displayName>
-          <description>CH0 Destination Address Register</description>
-          <addressOffset>0x10C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH0_ST-->
-          <name>DMA_CH0_ST</name>
-          <displayName>DMA_CH0_ST</displayName>
-          <description>CH0 status register</description>
-          <addressOffset>0x110</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH1CTR-->
-          <name>DMA_CH1CTR</name>
-          <displayName>DMA_CH1CTR</displayName>
-          <description>CH1 control register</description>
-          <addressOffset>0x120</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x1FFE</resetValue>
-        </register>
-        <register> <!--DMA_CH1MOD-->
-          <name>DMA_CH1MOD</name>
-          <displayName>DMA_CH1MOD</displayName>
-          <description>CH1 mode register</description>
-          <addressOffset>0x124</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH1MSADDR-->
-          <name>DMA_CH1MSADDR</name>
-          <displayName>DMA_CH1MSADDR</displayName>
-          <description>CH1 source address register</description>
-          <addressOffset>0x128</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--DMA_CH1MDADDR-->
-          <name>DMA_CH1MDADDR</name>
-          <displayName>DMA_CH1MDADDR</displayName>
-          <description>CH1 Destination Address Register</description>
-          <addressOffset>0x12C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>DMA_CTR</name>         <description>DMAcontrol register</description>                        <addressOffset>0x00</addressOffset>   <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_INTEN</name>       <description>DMAinterrupt enable register</description>               <addressOffset>0x04</addressOffset>   <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_INTST</name>       <description>DMAInterrupt Status Register</description>               <addressOffset>0x08</addressOffset>   <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH0CTR</name>      <description>CH0 control register</description>                       <addressOffset>0x100</addressOffset>  <size>0x20</size>  <resetValue>0x1FFE</resetValue> </register>
+        <register>  <name>DMA_CH0MOD</name>      <description>CH0 mode register</description>                          <addressOffset>0x104</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH0MSADDR</name>   <description>CH0 source address register</description>                <addressOffset>0x108</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH0MDADDR</name>   <description>CH0 Destination Address Register</description>           <addressOffset>0x10C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH0_ST</name>      <description>CH0 status register</description>                        <addressOffset>0x110</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH1CTR</name>      <description>CH1 control register</description>                       <addressOffset>0x120</addressOffset>  <size>0x20</size>  <resetValue>0x1FFE</resetValue> </register>
+        <register>  <name>DMA_CH1MOD</name>      <description>CH1 mode register</description>                          <addressOffset>0x124</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH1MSADDR</name>   <description>CH1 source address register</description>                <addressOffset>0x128</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
+        <register>  <name>DMA_CH1MDADDR</name>   <description>CH1 Destination Address Register</description>           <addressOffset>0x12C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>   </register>
       </registers>
     </peripheral>
-    <peripheral> <!--CRC-->
+
+    <peripheral>
       <name>CRC</name>
-      <description>cyclic redundancy check calculation
-      unit</description>
+      <description>Cyclic redundancy check calculation unit</description>
       <groupName>CRC</groupName>
       <baseAddress>0x40003000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--CRC_CR-->
-          <name>CRC_CR</name>
-          <displayName>CRC_CR</displayName>
-          <description>CRC control register</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CRC_IV-->
-          <name>CRC_IV</name>
-          <displayName>CRC_IV</displayName>
-          <description>CRC initial value register</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CRC_DATAIN-->
-          <name>CRC_DATAIN</name>
-          <displayName>CRC_DATAIN</displayName>
-          <description>CRC input data register</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--CRC_DATAOUT-->
-          <name>CRC_DATAOUT</name>
-          <displayName>CRC_DATAOUT</displayName>
-          <description>CRC output data register</description>
-          <addressOffset>0x0C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register> <name>CRC_CR</name>       <description>CRC control register</description>         <addressOffset>0x00</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register> <name>CRC_IV</name>       <description>CRC initial value register</description>   <addressOffset>0x04</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register> <name>CRC_DATAIN</name>   <description>CRC input data register</description>      <addressOffset>0x08</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register> <name>CRC_DATAOUT</name>  <description>CRC output data register</description>     <addressOffset>0x0C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--GPIOA-->
+
+    <peripheral> <!-- Page 119 -->
       <name>GPIOA</name>
-      <description>GPIOA
-      unit</description>
+      <description>GPIOA unit</description>
       <groupName>GPIOA</groupName>
       <baseAddress>0x40060000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--GPIOA_DATA-->
-          <name>GPIOA_DATA</name>
-          <displayName>GPIOA_DATA</displayName>
-          <description>GPIODATAregister</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_DIR-->
-          <name>GPIOA_DIR</name>
-          <displayName>GPIOA_DIR</displayName>
-          <description>set upGPIOsPin direction</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTLVLTRG-->
-          <name>GPIOA_INTLVLTRG</name>
-          <displayName>GPIOA_INTLVLTRG</displayName>
-          <description>set upGPIOsPin interrupt sensitive conditions</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_EDTRIG-->
-          <name>GPIOA_EDTRIG</name>
-          <displayName>GPIOA_EDTRIG</displayName>
-          <description>GPIO Pin edge trigger mode</description>
-          <addressOffset>0x0C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTEVM-->
-          <name></name>
-          <displayName></displayName>
-          <description>GPIO Pin interrupt event mode</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTEN-->
-          <name>GPIOA_INTEN</name>
-          <displayName>GPIOA_INTEN</displayName>
-          <description>GPIO Pin interrupt enable</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTRAWSTAUS-->
-          <name>GPIOA_INTRAWSTAUS</name>
-          <displayName>GPIOA_INTRAWSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTSTAUS-->
-          <name>GPIOA_INTSTAUS</name>
-          <displayName>GPIOA_INTSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOA_INTCLR-->
-          <name>GPIOA_INTCLR</name>
-          <displayName>GPIOA_INTCLR</displayName>
-          <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>GPIOA_DATA</name>            <description>GPIO DATA register</description>                                                        <addressOffset>0x00</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_DIR</name>             <description>GPIO Pin direction</description>                                                       <addressOffset>0x04</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTLVLTRG</name>       <description>GPIO Pin interrupt sensitive conditions</description>                                  <addressOffset>0x08</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTBE</name>           <description>GPIO Pin edge trigger mode</description>                                               <addressOffset>0x0C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTRISEEN</name>       <description>GPIO Pin interrupt event mode</description>                                            <addressOffset>0x10</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTEN</name>           <description>GPIO Pin interrupt enable</description>                                                <addressOffset>0x14</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTRAWSTAUS</name>     <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>   <addressOffset>0x18</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTSTAUS</name>        <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>  <addressOffset>0x1C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOA_INTCLR</name>          <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>        <addressOffset>0x20</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--GPIOB-->
+    <peripheral>
       <name>GPIOB</name>
-      <description>GPIOB
-      unit</description>
+      <description>GPIOB unit</description>
       <groupName>GPIOB</groupName>
       <baseAddress>0x40060800</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--GPIOB_DATA-->
-          <name>GPIOB_DATA</name>
-          <displayName>GPIOB_DATA</displayName>
-          <description>GPIODATAregister</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_DIR-->
-          <name>GPIOB_DIR</name>
-          <displayName>GPIOB_DIR</displayName>
-          <description>set upGPIOsPin direction</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTLVLTRG-->
-          <name>GPIOB_INTLVLTRG</name>
-          <displayName>GPIOB_INTLVLTRG</displayName>
-          <description>set upGPIOsPin interrupt sensitive conditions</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_EDTRIG-->
-          <name>GPIOB_EDTRIG</name>
-          <displayName>GPIOB_EDTRIG</displayName>
-          <description>GPIO Pin edge trigger mode</description>
-          <addressOffset>0x0C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTEVM-->
-          <name></name>
-          <displayName></displayName>
-          <description>GPIO Pin interrupt event mode</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTEN-->
-          <name>GPIOB_INTEN</name>
-          <displayName>GPIOB_INTEN</displayName>
-          <description>GPIO Pin interrupt enable</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTRAWSTAUS-->
-          <name>GPIOB_INTRAWSTAUS</name>
-          <displayName>GPIOB_INTRAWSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTSTAUS-->
-          <name>GPIOB_INTSTAUS</name>
-          <displayName>GPIOB_INTSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOB_INTCLR-->
-          <name>GPIOB_INTCLR</name>
-          <displayName>GPIOB_INTCLR</displayName>
-          <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>GPIOB_DATA</name>            <description>GPIO DATA register</description>                                                       <addressOffset>0x00</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_DIR</name>             <description>GPIO Pin direction</description>                                                       <addressOffset>0x04</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTLVLTRG</name>       <description>GPIO Pin interrupt sensitive conditions</description>                                  <addressOffset>0x08</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTBE</name>           <description>GPIO Pin edge trigger mode</description>                                               <addressOffset>0x0C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTRISEEN</name>       <description>GPIO Pin interrupt event mode</description>                                            <addressOffset>0x10</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTEN</name>           <description>GPIO Pin interrupt enable</description>                                                <addressOffset>0x14</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTRAWSTAUS</name>     <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>   <addressOffset>0x18</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTSTAUS</name>        <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>  <addressOffset>0x1C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOB_INTCLR</name>          <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>        <addressOffset>0x20</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
-    <peripheral> <!--GPIOC-->
+    <peripheral>
       <name>GPIOC</name>
       <description>GPIOC
       unit</description>
       <groupName>GPIOC</groupName>
       <baseAddress>0x40061000</baseAddress>
       <addressBlock>
-        <offset>0x0</offset>
-        <size>0x800</size>
-        <usage>registers</usage>
+        <offset>0x0</offset> <size>0x800</size> <usage>registers</usage>
       </addressBlock>
       <registers>
-        <register> <!--GPIOC_DATA-->
-          <name>GPIOC_DATA</name>
-          <displayName>GPIOC_DATA</displayName>
-          <description>GPIODATAregister</description>
-          <addressOffset>0x00</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_DIR-->
-          <name>GPIOC_DIR</name>
-          <displayName>GPIOC_DIR</displayName>
-          <description>set upGPIOsPin direction</description>
-          <addressOffset>0x04</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTLVLTRG-->
-          <name>GPIOC_INTLVLTRG</name>
-          <displayName>GPIOC_INTLVLTRG</displayName>
-          <description>set upGPIOsPin interrupt sensitive conditions</description>
-          <addressOffset>0x08</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_EDTRIG-->
-          <name>GPIOC_EDTRIG</name>
-          <displayName>GPIOC_EDTRIG</displayName>
-          <description>GPIO Pin edge trigger mode</description>
-          <addressOffset>0x0C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTEVM-->
-          <name></name>
-          <displayName></displayName>
-          <description>GPIO Pin interrupt event mode</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTEN-->
-          <name>GPIOC_INTEN</name>
-          <displayName>GPIOC_INTEN</displayName>
-          <description>GPIO Pin interrupt enable</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTRAWSTAUS-->
-          <name>GPIOC_INTRAWSTAUS</name>
-          <displayName>GPIOC_INTRAWSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTSTAUS-->
-          <name>GPIOC_INTSTAUS</name>
-          <displayName>GPIOC_INTSTAUS</displayName>
-          <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
-        <register> <!--GPIOC_INTCLR-->
-          <name>GPIOC_INTCLR</name>
-          <displayName>GPIOC_INTCLR</displayName>
-          <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00</resetValue>
-        </register>
+        <register>  <name>GPIOC_DATA</name>         <description>GPIO DATA register</description>                                                          <addressOffset>0x00</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_DIR</name>          <description>GPIO Pin direction</description>                                                          <addressOffset>0x04</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTLVLTRG</name>    <description>GPIO Pin interrupt sensitive conditions</description>                                     <addressOffset>0x08</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTBE</name>        <description>GPIO Pin edge trigger mode</description>                                                  <addressOffset>0x0C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTRISEEN</name>    <description>GPIO Pin interrupt event mode</description>                                               <addressOffset>0x10</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTEN</name>        <description>GPIO Pin interrupt enable</description>                                                   <addressOffset>0x14</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTRAWSTAUS</name>  <description>Indicates that the corresponding bit is detectedGPIO interrupt trigger</description>      <addressOffset>0x18</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTSTAUS</name>     <description>Indicates that the corresponding bit is detectedGPIO pin generation int</description>     <addressOffset>0x1C</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
+        <register>  <name>GPIOC_INTCLR</name>       <description>Clear the corresponding bitGPIOsPin edge triggered interrupt flag</description>           <addressOffset>0x20</addressOffset>  <size>0x20</size>  <resetValue>0x00</resetValue>  </register>
       </registers>
     </peripheral>
+
     <peripheral> <!--TIMER_BASE0-->
       <name>TIMER_BASE0</name>
       <description>TIMER_BASE0
