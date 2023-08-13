@@ -71,7 +71,7 @@ elif sys.argv[1]=='pack':
 
     # visual indicator for firmware size and big warning if too big
     current_size = len(decoded_firmware)
-    max_size = 0xf000
+    max_size = 0xefff
 
     percentage = (current_size / max_size) * 100
     bar_length = int(percentage / 2)  # Assuming each character represents 2% progress
@@ -85,7 +85,7 @@ elif sys.argv[1]=='pack':
         print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING")
         print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING")
         print("WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING\n")
-        print("WARNING: Firmware size exceeds the maximum allowed size of 0xf000 (61440) bytes!")
+        print("WARNING: Firmware size exceeds the maximum allowed size of 0xefff (61439) bytes!")
         print("Using an oversize firmware will not work correctly and may lead to freezes, crashes and defects.\n")
     
     

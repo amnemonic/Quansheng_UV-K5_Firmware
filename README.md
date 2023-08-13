@@ -35,7 +35,9 @@ Only stock firmwares, no mods, no alterations. If you want modified firmware rea
 
 All files from table are already encoded and can be directly flashed using firmware updater V1.1.12. 
 
+
 # Links
+* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [On-line firmware modder by @whosmatt](https://whosmatt.github.io/uvmod/) ![new3](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/4815527c-508c-4d93-9c33-149d1ebd6234)
 * [ludwich66 - Quansheng UV-K5 Wiki](https://github.com/ludwich66/Quansheng_UV-K5_Wiki/wiki)
 * [Tunas1337 - UV-K5-Modded-Firmwares](https://github.com/Tunas1337/UV-K5-Modded-Firmwares)
 * [sq5bpf - uvk5-reverse-engineering](https://github.com/sq5bpf/uvk5-reverse-engineering) | [CHIRP Driver](https://github.com/sq5bpf/uvk5-reverse-engineering/blob/main/uvk5.py) | [Official CHIRP Driver](https://github.com/kk7ds/chirp/blob/master/chirp/drivers/uvk5.py)
