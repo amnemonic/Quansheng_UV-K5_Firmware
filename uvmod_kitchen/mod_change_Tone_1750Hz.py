@@ -1,5 +1,6 @@
-# This mod makes the ABR values actually double (1 corresponds to 2 seconds, 2 corresponds to 4 seconds... up to 5, which corresponds to 10 seconds)
-# nothing to configure
+# If you want, change the frequencies of the tone burst.
+
+tone = int(1750) # change 1750 to any frequency in Hz
 
 
 ##--------------------- do not modify below this line ---------------------------------------------------
@@ -8,11 +9,13 @@ print('Running',os.path.basename(sys.argv[0]),'mod...')
 
 fw =  bytearray(open(sys.argv[1],'rb').read())
 
-if fw[0x5976] == 0x40:
-    print('Doubling screen timeout values...')
-    fw[0x5976] = 0x80 # if you enter 0xc0 the time quadruples
+if fw[0x29cc] == 0xd6 and fw[0x29cd] == 0x06 :
+    print('Changing tone burst frequency to',tone,'Hz')
+    fw[0x29cc:0x29cc+4] = struct.pack('<I',tone)
+    
 else:
     print('ERROR: Cant find function')
 
 
 open(sys.argv[1],'wb').write(fw)
+
