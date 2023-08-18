@@ -2,6 +2,14 @@
 All scripts uses my library `libuvk5.py`. Scripts tested only on windows.
 <hr>
 
+## To read write access COM Port (Serial/USB Cable) must be the Serial Module installed into Python.
+
+Install from command prompt/cmd the serial module for Python and run: 
+```
+py -m pip install serial
+```
+Python download the module and it's available in your environment (Windows,...)
+<hr>
 
 ### `fw_unpack.py`
 Usage sample:
