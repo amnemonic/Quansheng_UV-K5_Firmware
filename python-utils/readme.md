@@ -6,7 +6,7 @@ All scripts uses my library `libuvk5.py`. Scripts tested only on windows.
 
 Install from command prompt/cmd the serial module for Python and run: 
 ```
-py -m pip install serial
+python -m pip install pyserial
 ```
 Python download the module and it's available in your environment (Windows,...)
 <hr>
