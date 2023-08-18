@@ -144,6 +144,16 @@ new_noaa_table =   [446_006_250, 446_018_750, 446_031_250, 446_043_750, 446_056_
 Just sets new values for frequencies in NOAA scan list, nothing less, nothing more. 
 <hr>
 
+### `mod_change_Tone_1750Hz.py`
+Customization:
+```python
+# change 1750 to any tone frequency in Hz
+tone = int(1750) 
+```
+Changes the sound of the tone frequenzy in Hz from 1750 to any value.
+1750 (Hz) is default relay opener. 1050 opens NOAA Tone-Squelch
+<hr>
+
 
 ### `mod_disable_tx_completely.py`
 No customization. 
