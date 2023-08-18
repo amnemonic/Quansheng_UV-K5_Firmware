@@ -10,7 +10,7 @@ fw =  bytearray(open(sys.argv[1],'rb').read())
 
 if fw[0x5976] == 0x40:
     print('Doubling screen timeout values...')
-    fw[0x5976] = 0x80
+    fw[0x5976] = 0x80 # if you enter 0xc0 the time quadruples
 else:
     print('ERROR: Cant find function')
 
