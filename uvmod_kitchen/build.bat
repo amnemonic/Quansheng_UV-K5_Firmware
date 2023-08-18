@@ -5,7 +5,8 @@
 @echo Extracting firmare...
 python qsfirm.py unpack k5_v2.01.26_publish.bin temp\fw.dec.bin temp\fw.ver.bin
 
-
+rem @echo open temp\fw.ver.bin with hex editor to change version from 2. to *. is universal or to 3., 4.
+rem pause
 
 :: mods by https://github.com/piotr022
 :: please choose only one of them and always 
@@ -40,10 +41,13 @@ rem python mod_custom_bootscreen.py temp\fw.dec.bin
 rem python mod_enable_swd_port.py temp\fw.dec.bin
 
 python src\new_0x051f_handler\mod_051f_ramreader.py temp\fw.dec.bin
-python mod_roger_mototrbo_like.py temp\fw.dec.bin
+    python mod_roger_mototrbo_like.py temp\fw.dec.bin
+    python mod_change_Tone_1750Hz.py temp\fw.dec.bin
 
 :: end of mods
 
 @echo Repacking firmware...
 python qsfirm.py pack temp\fw.dec.bin temp\fw.ver.bin k5_v2.01.26_MODDED.bin
 
+:: let cmd window open to read. disable auto close batch run on windows
+cmd /k
