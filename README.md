@@ -30,6 +30,7 @@ Only stock firmwares, no mods, no alterations. If you want modified firmware rea
 | [k5_2.01.25](firmware/k5_v2.01.25_publish.bin)   | Not released, dumped from device                    | n/a              |
 | [k5_2.01.26](firmware/k5_v2.01.26_publish.bin)   | V1.0.38                                             | 1.1.12           |
 | [k5_2.01.27](firmware/k5_v2.01.27_flashable.bin) | Not released, dumped from device by @CloverGit      | n/a              |
+| [k5_2.01.31](firmware/k5_v2.01.31_publish.bin)   | Official fw, released 2023-09-02 (**UV-K5**)        | 1.1.12           |
 | [k6_3.00.10](firmware/k6_v3.00.10_flashable.bin) | Not released, dumped from device (**UV-K6**)        | n/a              |
 | [k6_3.00.15](firmware/k6_v3.00.15_publish.bin)   | Official fw, released 2023-09-02 (**UV-K6**)        | 1.1.12           |
 | [k5_4.00.01](firmware/k5_v4.00.01_flashable.bin) | Not released, dumped from device (**UV-5R PLUS**)   | n/a              |
