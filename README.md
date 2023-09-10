@@ -4,6 +4,9 @@ At the beginning I was planning to put here only official firmwares found somewh
 ## Build your own firmware - [/uvmod_kitchen](/uvmod_kitchen)
 You can select what you want to include in your modded firmware. If you want unlock all frequencies but also have custom frequency steps? This is section for you. Thanks to this tool you can mix and match different mods to be included in final firmware. All mods are basing on firmware version k5_2.01.26.
 
+## Build your own firmware - [/uvmod_kitchen_31](/uvmod_kitchen_31)
+Same as above but all mods are basing on firmware version k5_2.01.31.
+
 ## Documents - [/docs](/docs)
 Some (incomplete) documents with info about CPU I/O pins, memory mappings, firmware format etc. 
 
