@@ -18,5 +18,5 @@ Porting most useful mods from v26 to v31, for now below mods are ported:
  - `mod_enable_swd_port.py` - enables debug port during normal radio operation
  - `mod_remove_tx_limits.py` - completely removes transmit limits
  - `mod_universal_version.py` - allow to flash output firmware also on `UV-K6` and `UV-5R PLUS`
-
+ - `mod_enable_am_everywhere.py` - allow to change modulation on all frequency ranges F1 - F7
 
