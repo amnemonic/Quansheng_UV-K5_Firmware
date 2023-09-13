@@ -52,6 +52,7 @@ All files from table are already encoded and can be directly flashed using firmw
 * [dkxce - Quansheng-UV-K5](https://github.com/dkxce/Quansheng-UV-K5)
 * [Hackaday article 🛠](https://hackaday.com/2023/06/23/easy-modifications-for-inexpensive-radios/)
 * [Telegram Channel - Global](https://t.me/quansheng_uvk5_en)
+* [Telegram Channel - 🇹🇷 TR](https://t.me/quansheng_uvk5_tr)
 * [Telegram Channel - 🇷🇺 RU](https://t.me/uv_k5)
 * [Telegram Channel - 🇪🇸 ES -> First one](https://t.me/Quansenguvk5) 
 * [Telegram Channel - 🇪🇸 ES -> Second channel](https://t.me/QuanShengES)
