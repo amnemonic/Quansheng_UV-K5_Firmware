@@ -42,7 +42,8 @@ All files from table are already encoded and can be directly flashed using firmw
 
 
 # Links
-* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [On-line firmware modder by @whosmatt](https://whosmatt.github.io/uvmod/) ![new3](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/4815527c-508c-4d93-9c33-149d1ebd6234)
+* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [Custom open source firmware by OneOfEleven ](https://github.com/OneOfEleven/uv-k5-firmware-custom)
+* [On-line firmware modder by @whosmatt](https://whosmatt.github.io/uvmod/)⭐
 * [ludwich66 - Quansheng UV-K5 Wiki](https://github.com/ludwich66/Quansheng_UV-K5_Wiki/wiki)
 * [Tunas1337 - UV-K5-Modded-Firmwares](https://github.com/Tunas1337/UV-K5-Modded-Firmwares)
 * [sq5bpf - uvk5-reverse-engineering](https://github.com/sq5bpf/uvk5-reverse-engineering) | [CHIRP Driver](https://github.com/sq5bpf/uvk5-reverse-engineering/blob/main/uvk5.py) | [Official CHIRP Driver](https://github.com/kk7ds/chirp/blob/master/chirp/drivers/uvk5.py)
@@ -52,6 +53,7 @@ All files from table are already encoded and can be directly flashed using firmw
 * [dkxce - Quansheng-UV-K5](https://github.com/dkxce/Quansheng-UV-K5)
 * [Hackaday article 🛠](https://hackaday.com/2023/06/23/easy-modifications-for-inexpensive-radios/)
 * [Telegram Channel - Global](https://t.me/quansheng_uvk5_en)
+* [Telegram Channel - 🇹🇷 TR](https://t.me/quansheng_uvk5_tr)
 * [Telegram Channel - 🇷🇺 RU](https://t.me/uv_k5)
 * [Telegram Channel - 🇪🇸 ES -> First one](https://t.me/Quansenguvk5) 
 * [Telegram Channel - 🇪🇸 ES -> Second channel](https://t.me/QuanShengES)

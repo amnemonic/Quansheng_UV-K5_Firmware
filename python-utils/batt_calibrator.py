@@ -13,14 +13,19 @@ with libuvk5.uvk5(arg_port) as radio:
         calib_raw = radio.get_cfg_mem(0x1F40,16)
         calib_data     = list(struct.unpack('<8H',calib_raw))
         calib_data_old = [i for i in calib_data]
-        if action=='read':
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(0, calib_data[0], 760*calib_data[0]/calib_data[3]/100,'// Empty battery blinking' ))
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(1, calib_data[1], 760*calib_data[1]/calib_data[3]/100,'// 1 battery bar if above this value' ))
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(2, calib_data[2], 760*calib_data[2]/calib_data[3]/100,'// 2 battery bars if above this value' ))
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(3, calib_data[3], 760*calib_data[3]/calib_data[3]/100,'// 3 battery bars if above this value, also value used to calculate adc to volt' ))
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(4, calib_data[4], 760*calib_data[4]/calib_data[3]/100,'// 4 battery bars if above this value' ))
-            print('Level {}: [{:>4}] {:.2f} V {}'.format(5, calib_data[5], 760*calib_data[5]/calib_data[3]/100,'// overwritten by radio to 2300 anyway' ))
-            print('\nActual = {:.2f} V'.format(760*radio.get_adc()[0]/calib_data[3]/100))
+        if action == 'read':
+            def calculate_voltage(value, denominator):
+                if denominator != 0:
+                    return 760 * value / denominator / 100
+                else:
+                    return 0  # Handle the division by zero case
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(0, calib_data[0], calculate_voltage(calib_data[0], calib_data[3]), '// Empty battery blinking'))
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(1, calib_data[1], calculate_voltage(calib_data[1], calib_data[3]), '// 1 battery bar if above this value'))
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(2, calib_data[2], calculate_voltage(calib_data[2], calib_data[3]), '// 2 battery bars if above this value'))
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(3, calib_data[3], calculate_voltage(calib_data[3], calib_data[3]), '// 3 battery bars if above this value, also value used to calculate adc to volt'))
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(4, calib_data[4], calculate_voltage(calib_data[4], calib_data[3]), '// 4 battery bars if above this value'))
+            print('Level {}: [{:>4}] {:.2f} V {}'.format(5, calib_data[5], calculate_voltage(calib_data[5], calib_data[3]), '// overwritten by radio to 2300 anyway'))
+            print('\nActual = {:.2f} V'.format(calculate_voltage(radio.get_adc()[0], calib_data[3])))
 
         if action=='write': 
             if len(sys.argv)!=9: print(f'Usage: {os.path.basename(sys.argv[0])} <COMx> write val0 val1 val2 val3 val4 val5') ; exit(1)
