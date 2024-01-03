@@ -40,6 +40,7 @@ Only stock firmwares, no mods, no alterations. If you want modified firmware rea
 | [k6_3.00.15](firmware/k6_v3.00.15_publish.bin)    | Official fw, released 2023-09-02 (**UV-K6**)                               | 1.1.12           |
 | [k5_4.00.01](firmware/k5_v4.00.01_flashable.bin)  | Not released, dumped from device (**UV-5R PLUS**)                          | n/a              |
 | [k5_4.00.06](firmware/RT600_v4.00.06_publish.bin) | Released on [Radtel Site](https://www.radtels.com/pages/software-download) | 1.1.12           |
+| [k5_4.00.07](firmware/k5_v4.00.07_publish.bin)    | From @Andy-GM (see #117) (**UV-5R PLUS**)                                  | n/a              |
 
 All files from table are already encoded and can be directly flashed using firmware updater V1.1.12. 
 
