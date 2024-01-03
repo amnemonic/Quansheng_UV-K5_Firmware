@@ -66,6 +66,7 @@ All files from table are already encoded and can be directly flashed using firmw
 * [Telegram Channel - 🇵🇱 PL](https://t.me/uvk5_pl)
 * [Telegram Channel - 🇩🇪 DE](https://t.me/quanshenguv5kde)
 * [Telegram Channel - 🇺🇦 UA](https://t.me/radioamators/38782)
+* [Telegram Channel - 🇫🇮 FI](https://t.me/UVK5_Suomi)
 * Official UV-K5 support page:              [Chinese](http://qsfj.com/support/downloads/3002) | [English](http://en.qsfj.com/support/downloads/3002)
 * Official UV-K5 product page:              [Chinese](http://qsfj.com/products/3002)          | [English](http://en.qsfj.com/products/3002)
 * Official UV-K5(8) aka UV-K6 support page: [Chinese](http://qsfj.com/support/downloads/3268) | [English](http://en.qsfj.com/support/downloads/3268)
