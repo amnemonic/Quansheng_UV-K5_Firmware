@@ -46,15 +46,16 @@ All files from table are already encoded and can be directly flashed using firmw
 
 
 # Links
-* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [Custom open source firmware by OneOfEleven ](https://github.com/OneOfEleven/uv-k5-firmware-custom)
-* [On-line firmware modder by @whosmatt](https://whosmatt.github.io/uvmod/)⭐
-* [ludwich66 - Quansheng UV-K5 Wiki](https://github.com/ludwich66/Quansheng_UV-K5_Wiki/wiki)
-* [Tunas1337 - UV-K5-Modded-Firmwares](https://github.com/Tunas1337/UV-K5-Modded-Firmwares)
-* [sq5bpf - uvk5-reverse-engineering](https://github.com/sq5bpf/uvk5-reverse-engineering) | [CHIRP Driver](https://github.com/sq5bpf/uvk5-reverse-engineering/blob/main/uvk5.py) | [Official CHIRP Driver](https://github.com/kk7ds/chirp/blob/master/chirp/drivers/uvk5.py)
-* [fagci - qs-uvk5-firmware-modder](https://github.com/fagci/qs-uvk5-firmware-modder)
-* [piotr022 - UV_K5_playground](https://github.com/piotr022/UV_K5_playground)
-* [manujedi - UV_K5-Tools](https://github.com/manujedi/UV_K5-Tools)
-* [dkxce - Quansheng-UV-K5](https://github.com/dkxce/Quansheng-UV-K5)
+* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [A merge between **OneOfEleven/uv-k5-firmware-custom** and **fagci/uv-k5-firmware-fagci-mod**](https://github.com/egzumer/uv-k5-firmware-custom) by [@egzumer](https://github.com/egzumer)
+* [Custom open source firmware](https://github.com/OneOfEleven/uv-k5-firmware-custom) by [@OneOfEleven](https://github.com/OneOfEleven)
+* [On-line firmware modder](https://whosmatt.github.io/uvmod/)  by [@whosmatt](https://github.com/whosmatt)
+* [Quansheng UV-K5 Wiki](https://github.com/ludwich66/Quansheng_UV-K5_Wiki/wiki) by [@ludwich66](https://github.com/ludwich66)
+* [UV-K5-Modded-Firmwares](https://github.com/Tunas1337/UV-K5-Modded-Firmwares) by [@Tunas1337](https://github.com/Tunas1337) (repo archived on Feb 16, 2024)
+* [uvk5-reverse-engineering](https://github.com/sq5bpf/uvk5-reverse-engineering) | [CHIRP Driver](https://github.com/sq5bpf/uvk5-reverse-engineering/blob/main/uvk5.py) | [Official CHIRP Driver](https://github.com/kk7ds/chirp/blob/master/chirp/drivers/uvk5.py) by [@sq5bpf](https://github.com/sq5bpf)
+* [qs-uvk5-firmware-modder](https://github.com/fagci/qs-uvk5-firmware-modder) by [@fagci](https://github.com/fagci)
+* [UV_K5_playground](https://github.com/piotr022/UV_K5_playground) by [@piotr022](https://github.com/piotr022)
+* [UV_K5-Tools](https://github.com/manujedi/UV_K5-Tools) by [@manujedi](https://github.com/manujedi)
+* [Quansheng-UV-K5](https://github.com/dkxce/Quansheng-UV-K5) by [@dkxce](https://github.com/dkxce)
 * [Hackaday article 🛠](https://hackaday.com/2023/06/23/easy-modifications-for-inexpensive-radios/)
 * [Telegram Channel - Global](https://t.me/quansheng_uvk5_en)
 * [Telegram Channel - 🇧🇬 BG](https://t.me/quansheng_uvk5_bg)
