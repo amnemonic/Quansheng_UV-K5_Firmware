@@ -42,7 +42,7 @@ Direction address: `0x40060804`
 Exposed pins
 | Pin  | Function         |
 |  --: | :--              |
-| PB6  | LCD Backgliht on |
+| PB6  | LCD Backlight on |
 | PB7  |                  |
 | PB8  |                  |
 | PB9  | ST7565 A0 pin?   |
