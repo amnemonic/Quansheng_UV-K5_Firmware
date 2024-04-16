@@ -46,7 +46,8 @@ All files from table are already encoded and can be directly flashed using firmw
 
 
 # Links
-* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [A merge between **OneOfEleven/uv-k5-firmware-custom** and **fagci/uv-k5-firmware-fagci-mod**](https://github.com/egzumer/uv-k5-firmware-custom) by [@egzumer](https://github.com/egzumer)
+* ![New_Logo](https://github.com/amnemonic/Quansheng_UV-K5_Firmware/assets/29899901/9b6b8303-6a95-4c9f-81b7-52782500f833) [Multi-functional K5/6 Firmware](https://github.com/losehu/uv-k5-firmware-custom/blob/main/README_en.md) by [@losehu](https://github.com/losehu)
+*  [A merge between **OneOfEleven/uv-k5-firmware-custom** and **fagci/uv-k5-firmware-fagci-mod**](https://github.com/egzumer/uv-k5-firmware-custom) by [@egzumer](https://github.com/egzumer)
 * [Custom open source firmware](https://github.com/OneOfEleven/uv-k5-firmware-custom) by [@OneOfEleven](https://github.com/OneOfEleven)
 * [On-line firmware modder](https://whosmatt.github.io/uvmod/)  by [@whosmatt](https://github.com/whosmatt)
 * [Quansheng UV-K5 Wiki](https://github.com/ludwich66/Quansheng_UV-K5_Wiki/wiki) by [@ludwich66](https://github.com/ludwich66)
