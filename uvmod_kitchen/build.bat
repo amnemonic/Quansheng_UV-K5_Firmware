@@ -24,6 +24,7 @@ rem python mod_mic_gain.py temp\fw.dec.bin
 rem python mod_custom_font.py temp\fw.dec.bin
 rem python mod_custom_font_DO7OO.py temp\fw.dec.bin
 rem python mod_custom_font_VCR.py temp\fw.dec.bin
+rem python mod_custom_font_comicsans.py temp\fw.dec.bin
 
     python mod_custom_freq_ranges.py temp\fw.dec.bin
 rem python mod_custom_noaa_freqs.py temp\fw.dec.bin
